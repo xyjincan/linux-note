@@ -1,0 +1,38 @@
+
+/*
+ *  java对象
+ * 
+ * 	this
+ * 	super
+ * 
+ * */
+
+class A{
+	
+	A(){
+		System.out.println("a");
+	}
+	
+	
+	void Print(){
+		System.out.println("A speak");
+	}
+	
+	
+}
+
+class B extends A{
+	
+	B(){
+		super();
+		System.out.println("b");
+	}
+	
+	
+	void Print(){
+		super.Print();
+		System.out.println("B speak");
+	}
+	
+	
+} 

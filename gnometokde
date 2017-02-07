@@ -1,0 +1,4 @@
+#fedora222 install kde
+yum groupinstall kde-desktop
+yum --enablerepo=kde-testing groupupdate kde-desktop
+yum update

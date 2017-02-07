@@ -1,0 +1,31 @@
+sudo service apache2 restart/stop/start
+Usage:  start|stop|restart|reload|force-reload|status
+
+
+使用systemctl命令，要记住start,stop,restart,status,enable,disable,is-enabled。就可以很好的使用！
+
+
+
+ 
+sudo systemctl stop mysql.service 
+sudo systemctl status mysql.service
+{
+	fedora
+	sudo systemctl list-units --type=service
+	(sudo systemctl start mysqld.service)
+	(sudo systemctl stop httpd.service)
+	
+[xw@Y4 ~]$ sudo systemctl disable firewalld.service
+Removed symlink /etc/systemd/system/basic.target.wants/firewalld.service.
+Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
+
+}
+
+systemctl start network.service 关闭网络服务：
+systemctl stop network.service 重启网络服务：
+systemctl restart network.service
+显示一个服务（无论运行与否）的状态： systemctl status network.service
+在开机时启用一个服务： systemctl enable network.service
+在开机时禁用一个服务： systemctl disable network.service
+查看服务开机是否启动：systemctl is-enabled network.service;echo $?  或者是chkconfig
+使用systemctl命令，要记住start,stop,restart,status,enable,disable,is-enabled。就可以很好的使用！

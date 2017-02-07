@@ -1,0 +1,39 @@
+./configure --prefix=/usr/local/nginx  --with-http_ssl_module
+
+ 
+
+安装Nginx时报错
+
+./configure:  error: the HTTP rewrite module requires the PCRE library.
+
+安装pcre-devel解决问题
+yum -y install pcre-devel
+
+sudo dnf install openssl openssl-devel
+
+
+
+在configure的时候加上“--with-http_ssl_module”即可^^
+
+
+
+[xw@think ~]$ sudo dnf install openssl openssl-devel -y
+[sudo] xw 的密码：
+上次元数据过期检查：0:01:02 前，执行于 Fri Aug  5 22:58:55 2016。
+软件包 openssl-1:1.0.2h-1.fc24.x86_64 已安装，跳过
+依赖关系解决。
+=============================================================================================
+ Package                     架构           版本                       仓库             大小
+=============================================================================================
+安装:
+ keyutils-libs-devel         x86_64         1.5.9-8.fc24               fedora           46 k
+ krb5-devel                  x86_64         1.14.1-8.fc24              updates         652 k
+ libcom_err-devel            x86_64         1.42.13-4.fc24             fedora           36 k
+ libselinux-devel            x86_64         2.5-3.fc24                 fedora          192 k
+ libsepol-devel              x86_64         2.5-3.fc24                 fedora           79 k
+ libverto-devel              x86_64         0.2.6-6.fc24               fedora           16 k
+ openssl-devel               x86_64         1:1.0.2h-1.fc24            fedora          1.5 M
+ pcre-devel                  x86_64         8.39-2.fc24                updates         543 k
+ zlib-devel                  x86_64         1.2.8-10.fc24              fedora           55 k
+升级:
+ krb5-libs                   x86_64         1.14.1-8.fc24   

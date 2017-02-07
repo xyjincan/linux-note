@@ -1,0 +1,3 @@
+ sudo unzip VSCode.zip  -d /opt
+ 
+ a.tar.xz :  xz -d a.tar.xz && tar xvf  a.tar

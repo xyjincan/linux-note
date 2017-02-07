@@ -1,0 +1,7 @@
+#To start MariaDB on Fedora(默认已经安装。。。)
+
+systemctl start mariadb.service
+systemctl enable mariadb.service
+# After you started MariaDB (do this only once), execute the following command:
+# 自定义初始化设置
+/usr/bin/mysql_secure_installation

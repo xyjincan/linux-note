@@ -1,0 +1,27 @@
+int main()
+{
+    char a[10]="asdm";
+    int nu[10]={0};
+    
+    string demo(a);
+    cout << demo <<  endl;
+    
+    getline(cin,demo);
+    cout << demo <<  endl;
+    
+    vector<string> fin;
+    
+    fin.push_back(demo);
+    
+    
+    
+    return 0;
+}
+
+/*
+    getline by char
+    
+    char data[100];
+    scanf("%[^\n]",&data);
+
+*/

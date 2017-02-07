@@ -1,0 +1,9 @@
+
+
+scp -r /home/space/music/ root@www.cumt.edu.cn:/home/root/others/  
+
+
+scp jincan.tar.gz root@wujincan.cn:/root/
+
+
+ssh jc@wujincan.cn

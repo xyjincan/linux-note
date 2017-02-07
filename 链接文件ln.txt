@@ -1,0 +1,49 @@
+node，这个节点指向该文件放置内容的block块，新建立的i节点和文件原来的i节点指向相同的内容。而软链接则是新建立一个独立的文件，该文件指向链接的文件，类似于ms-windows下的快捷方式。
+
+命令参数：
+ln :在文件之间建立链接
+
+-s  对源文件建立软链接，而非硬链接。
+
+
+例：
+1、建立 /bin/ls的软链接 list
+ln -s  /bin/ls   list   #建立软链接 list
+
+2、建立硬链接
+过程记录如下：
+linux@linux-desktop:~/test$ dd if=/dev/zero  of=data  bs=1024K count=1  #创建一个1M的文件
+1+0 records in
+1+0 records out
+1048576 bytes (1.0 MB) copied, 0.0022375 s, 469 MB/s
+linux@linux-desktop:~/test$ ln -s data link_data   #创建软链接
+linux@linux-desktop:~/test$ ln  data hard_data     #创建硬链接
+linux@linux-desktop:~/test$ ls -l    
+total 2048
+-rw-r--r-- 2 linux linux 1048576 2010-11-23 14:13 data    #原始文件
+-rw-r--r-- 2 linux linux 1048576 2010-11-23 14:13 hard_data   #硬链接文件
+lrwxrwxrwx 1 linux linux       4 2010-11-23 14:13 link_data -> data   #软链接文件
+linux@linux-desktop:~/test$ 
+
+可以看出硬链接和原文件大小是一样的，因为两者虽然利用不同的i节点，但是i节点都指向相同的磁盘块，所以文件大小一致，而软链接文件非常小，因为这是一个单独的文件。
+
+3、在当前目录下创建和源文件同名的链接文件
+linux@linux-desktop:~/test$ ln -s /bin   #创建/bin目录的软链接
+linux@linux-desktop:~/test$ ls
+bin    #这个bin链接文件在当前目录，与/bin目录同名。
+
+4、创建多个链接文件到指定的目录 
+linux@linux-desktop:~/test$ mkdir -p a/b/c  #创建一个目录树
+linux@linux-desktop:~/test$ ln -s /sbin /sys  /boot  /bin  a/b/c #创建sbin,sys,boot,bin的链接文件到 a/b/c目录中
+linux@linux-desktop:~/test$ ls a/b/c -l   #查看a/b/c下的链接文件
+total 0
+lrwxrwxrwx 1 linux linux 4 2010-11-23 14:26 bin -> /bin
+lrwxrwxrwx 1 linux linux 5 2010-11-23 14:26 boot -> /boot
+lrwxrwxrwx 1 linux linux 5 2010-11-23 14:26 sbin -> /sbin
+lrwxrwxrwx 1 linux linux 4 2010-11-23 14:26 sys -> /sys
+linux@linux-desktop:~/test$ 
+
+注意 ：
+1、无论是软链接还是硬链接，ln命令都会保持每一处链接文件的同步性。
+2、不能建立到目的的硬链接，但可以用-d偿试建立，但成不成功与系统不同而不同。硬链接也不允许跨越文件系统。
+3、ln建立链接文件的时候，必须保持目标文件的存在。

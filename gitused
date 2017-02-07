@@ -1,0 +1,80 @@
+git init
+git remote add origin https://github.com/xyjincan/fail_clone.git
+echo "# fail_clone" >> README.md
+git add/rm README.md 
+git commit -m "first commit"
+git push -u origin master
+
+
+
+
+
+
+
+
+
+
+
+#第一次提交前 git remote add origin https://github.com/xyjincan/linux-note.git
+
+
+
+
+git push origin master //配置好远程之后，提交到远程
+
+   //获取远程项目
+
+git init
+
+
+touch "demo.txt"
+
+
+git status
+
+git add  <file>
+git rm  <file>
+
+git add . 
+#add all file
+
+git commit -m "fist commit"
+
+git status
+
+
+git log
+
+#
+[jc@y4 gittest]$ git checkout -b testnots
+M	gitused
+切换到一个新分支 'testnots'
+[jc@y4 gittest]$ git checkout -b master
+fatal: 一个分支名 'master' 已经存在。
+[jc@y4 gittest]$ git checkout maste
+error: pathspec 'maste' did not match any file(s) known to git.
+[jc@y4 gittest]$ git checkout master
+M	gitused
+切换到分支 'master'
+[jc@y4 gittest]$ 
+
+
+
+
+
+
+
+
+
+
+
+git checkout testnots
+切换到分支 'testnots'
+git branch -d testnots
+error: 无法删除您当前所在的分支 'testnots'。
+git checkout master
+切换到分支 'master'
+git branch -d testnots
+已删除分支 testnots（曾为 108e726）。
+
+

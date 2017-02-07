@@ -1,0 +1,9 @@
+sudo rpm -Uhv http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-23.noarch.rpm
+
+
+sudo rpm -Uhv http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-23.noarch.rpm
+
+
+
+
+$ dnf config-manager --add-repo=http://repo.fdzh.org/FZUG/FZUG.repo (For Fedora 22+)

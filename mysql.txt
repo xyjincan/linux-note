@@ -1,0 +1,6 @@
+sudo service mysqld start
+
+
+mima : root
+
+mysql_secure_installation

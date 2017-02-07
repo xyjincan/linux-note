@@ -1,0 +1,6 @@
+You don't have to install all the ia32 package. You can just use:
+
+sudo apt-get install lib32ncurses5 lib32stdc++6
+Also, I needed to make a soft link for LibGL.so.1 as mentioned here.
+
+ln -s /usr/lib/libGL.so.1 ~/android-sdk-linux_x86/tools/lib/libGL.so

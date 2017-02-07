@@ -1,0 +1,15 @@
+Ubuntu kylin 14.04 电脑屏幕亮度调整  
+
+2014-06-26 20:06:10|  分类： 电脑笔记 |举报|字号 订阅
+    
+下载LOFTER客户端
+每次开机发现屏幕亮度都是最亮的，可以通过Fn+F6/F7来调节背光亮度，但重启后还是会恢复到最大亮度。
+首先你要确保有这个文件:
+/sys/class/backlight/acpi_video0/brightness
+cat出来的值就是你当前的屏幕亮度.
+我们修改下面的文件加入一些用户启动设置:
+sudo gedit /etc/rc.local
+在 exit 0 的上方加入以下代码(确保exit 0没有被注释掉):
+echo 屏幕亮度值 > /sys/class/backlight/acpi_video0/brightness
+这样开机最后读取这个文件将 屏幕亮度值 动态写入 brightness文件中,以更改当前亮度.
+这个方法我测试过可行

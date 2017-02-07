@@ -1,0 +1,37 @@
+#/bin/bash
+
+#更新系统
+sudo dnf update
+sudo dnf upgrade -y
+
+
+#添加 一些软件源https://repo.fdzh.org/
+sudo rpm -Uhv http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-24.noarch.rpm
+sudo rpm -Uhv http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-24.noarch.rpm
+
+#添加 fedora 中文软件源（deepin-music等等 )
+sudo dnf config-manager --add-repo=http://repo.fdzh.org/FZUG/FZUG.repo (For Fedora 22+)
+
+#再更新
+sudo dnf update
+sudo dnf upgrade -y
+
+sudo dnf install vim gcc gcc-c++ 
+
+# google chrome
+# or http://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html
+# https://github.com/FZUG/repo/wiki/%E5%AE%89%E8%A3%85-Chrome
+
+# Fedora/RHEL  
+wget https://repo.fdzh.org/chrome/google-chrome-mirrors.repo -P /etc/yum.repos.d/
+
+
+
+#fedora 24 kde 安装中文输入法
+
+sudo dnf install fcitx fcitx-pinyin fcitx-configtool fcitx-qt5 im-chooser fcitx-sunpinyin
+
+#重启之后，一切都ok啦，sunpinyin万岁
+#reboot
+
+echo “尽情的使用吧！”

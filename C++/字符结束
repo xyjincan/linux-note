@@ -1,0 +1,15 @@
+ 
+    char a[10] = "demo";
+    printf("end:%d\n",a[8]);
+    cout << a << endl;
+    
+    
+    C++ : string char 
+    C   : char
+    
+    
+    '/0' mean 0
+    
+    '/0' ==  0
+        true
+    
