@@ -1,0 +1,46 @@
+下面是DNF的常用参数及其功能：
+
+autoremove 移除所有不再被用户软件包依赖“叶子”软件包
+
+check-update 检查是否有指定软件包的更新
+
+clean  dbcache  删除软件库元数据生成的缓存
+
+expire-cache 删除元数据和源列表本地缓存文件的报告
+
+metadata 删除软件库元数据（确定软件包的远程可用性）
+
+packages 删除系统所有的缓存软件包
+
+plugins  让每个插件删除其缓存数据
+
+all  以上所有操作的综合
+
+distro-sync 作为必要的升级，降级或保持选定/所有软件包匹配所有已启用软件源中的最新版本
+
+downgrade 如果可能的话，降级软件包到指定版本
+
+group info 显示已安装和可用的软件组
+
+install 标记并安装所选软件组
+
+list 列出所有软件组
+
+remove 删除指定软件组
+
+upgrade 升级指定软件组所有的软件
+
+install 安装指定软件包
+
+makecache 下载软件库元数据
+
+remove  删除指定软件包
+
+search  搜寻软件源中与指定关键词匹配的软件包
+
+upgrade/update 升级已安装的所有软件包
+
+
+翻译自：https://dnf.readthedocs.org/en/latest/command_ref.html#upgrade-command-label
+
+ 

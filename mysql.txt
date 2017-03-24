@@ -4,3 +4,46 @@ sudo service mysqld start
 mima : root
 
 mysql_secure_installation
+
+
+1.修改my.cnf
+
+ vi /etc/my.cfn
+
+在末尾新起一行加入：
+
+skip-grant-tables
+
+2.重启数据库
+
+service mysqld restart
+
+3.连接数据库
+
+mysql -uroot
+
+4.修改mysql root 用户的密码
+
+
+update mysql.user set authentication_string = password('Fedora25!') where user='root' and Host = 'localhost';
+flush privileges;
+quit;
+
+
+
+  amarok.x86_64 2.8.90-8.fc25                                 amarok-libs.x86_64 2.8.90-8.fc25                        
+  amarok-utils.x86_64 2.8.90-8.fc25                           audiocd-kio.x86_64 16.08.2-1.fc25                       
+  audiocd-kio-doc.noarch 16.08.2-1.fc25                       audiocd-kio-libs.x86_64 16.08.2-1.fc25                  
+  clamz.x86_64 0.5-10.fc24                                    ifuse.x86_64 1.1.3-8.fc24                               
+  kf5-akonadi-server-mysql.x86_64 16.08.2-1.fc25              kio-upnp-ms.x86_64 1.0.0-9.20111102git.fc24             
+  kio_mtp.x86_64 0.75-13.20141221gitc418634.fc24              libgpod.x86_64 0.8.3-13.fc25                            
+  libkcompactdisc.x86_64 16.08.2-1.fc25                       liblastfm.x86_64 1.0.9-6.fc24                           
+  libmygpo-qt.x86_64 1.0.8-5.fc24                             loudmouth.x86_64 1.5.3-1.fc25                           
+  mariadb.x86_64 3:10.1.18-1.fc25                             mariadb-common.x86_64 3:10.1.18-1.fc25                  
+  mariadb-config.x86_64 3:10.1.18-1.fc25                      mariadb-embedded.x86_64 3:10.1.18-1.fc25                
+  mariadb-errmsg.x86_64 3:10.1.18-1.fc25                      mariadb-libs.x86_64 3:10.1.18-1.fc25                    
+  mariadb-server.x86_64 3:10.1.18-1.fc25                      perl-DBD-MySQL.x86_64 4.037-1.fc25                      
+  perl-DBI.x86_64 1.636-3.fc25                                perl-Math-BigInt.noarch 1.9997.26-1.fc25                
+  perl-Math-Complex.noarch 1.59-377.fc25                      perl-Storable.x86_64 1:2.56-366.fc25                    
+  qt5-qtbase-mysql.x86_64 5.7.0-3.fc25                        qtscriptbindings.x86_64 0.2.0-11.fc24                   
+  sg3_utils-libs.x86_64 1.41-3.fc24                           taglib-extras.x86_64 1.0.1-13.fc24     
