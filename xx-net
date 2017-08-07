@@ -1,2 +1,5 @@
-fedora25xx-net
-klxactqkitpueckl 
+#!/bin/bash
+
+nohup xx-net > /dev/null  &
+
+
