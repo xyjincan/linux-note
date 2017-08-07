@@ -1,5 +1,8 @@
 #/bin/bash
 
+#sudo dnf erase calligra-*
+
+
 #a http://repo.fdzh.org/FZUG/FZUG.repo
 #b http://rpmfusion.org/
 #c https://repo.fdzh.org/FZUG/rpmfusion
@@ -26,6 +29,9 @@ sudo dnf update
 sudo dnf upgrade -y
 
 sudo dnf install vim gcc gcc-c++ 
+
+sudo dnf erase konqueror qupzilla firefox
+
 
 # google chrome
 # or http://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html

@@ -1,4 +1,16 @@
+depend: mecab  mecab-ipadic
+sudo yum install mysql-community-{server,client,common,libs}-* 
+
 sudo service mysqld start
+
+sudo grep 'temporary password' /var/log/mysqld.log
+
+
+shell> mysql -uroot -p
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Fedora@123';
+
+sudo systemctl enable mysqld
 
 
 mima : root
@@ -47,3 +59,62 @@ quit;
   perl-Math-Complex.noarch 1.59-377.fc25                      perl-Storable.x86_64 1:2.56-366.fc25                    
   qt5-qtbase-mysql.x86_64 5.7.0-3.fc25                        qtscriptbindings.x86_64 0.2.0-11.fc24                   
   sg3_utils-libs.x86_64 1.41-3.fc24                           taglib-extras.x86_64 1.0.1-13.fc24     
+
+  
+  
+  
+  
+  
+  
+Mysql 汉字支持
+ 
+# For advice on how to change settings please see
+# http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html
+
+[mysqld]
+#
+# Remove leading # and set to the amount of RAM for the most important data
+# cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.
+# innodb_buffer_pool_size = 128M
+#
+# Remove leading # to turn on a very important data integrity option: logging
+# changes to the binary log between backups.
+# log_bin
+#
+# Remove leading # to set options mainly useful for reporting servers.
+# The server defaults are faster for transactions and fast SELECTs.
+# Adjust sizes as needed, experiment to find the optimal values.
+# join_buffer_size = 128M
+# sort_buffer_size = 2M
+# read_rnd_buffer_size = 2M
+
+
+[client]
+default-character-set=utf8
+
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+user=mysql
+#Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+#default-character-set=utf8
+character-set-server=utf8
+init_connect='SET NAMES utf8'
+
+
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+
+# Recommended in standard MySQL setup
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES 
+
+
+
+[mysql]
+no-auto-rehash
+default-character-set=utf8
+
+[mysqld_safe]
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
