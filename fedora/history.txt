@@ -1,0 +1,997 @@
+    1  ls
+    2  cd ..
+    3  ls
+    4  rmdir workspace/
+    5  cd  workspace
+    6  ls
+    7  ll
+    8  cd //
+    9  cd /home/xw
+   10  ls
+   11  tree
+   12  ls
+   13  cd ..
+   14  ls
+   15  sudo rm -rf xw
+   16  ls
+   17  cd ub/
+   18  ls
+   19  cd note/
+   20  ls
+   21  cd ~
+   22  ls
+   23  cd note/
+   24  ls
+   25  cat mysql
+   26  cat mysql.txt 
+   27  cd ..
+   28  ls
+   29  cd note/
+   30  cat mysql.txt 
+   31  sudo grub2-mkconfig 
+   32  su
+   33  sudo dnf install xx-net
+   34  ssh www.watchers.cc
+   35  ssh root@www.watchers.cc
+   36  ping 192.168.2.225
+   37  xx-net 
+   38  ll
+   39  ls -al
+   40  cd .xx-net/
+   41  ll
+   42  sudo dnf erase apper
+   43  sudo dnf install q
+   44  sudo dnf erase dragon
+   45  sudo dnf erase ktp-contact
+   46  sudo dnf erase ktp-contact-list-16.08.3-1.fc25.x86_64    ktp-contact-runner-16.08.3-1.fc25.x86_64
+   47  sudo dnf erase plasma-discover
+   48  ll
+   49  cd note/
+   50  ls
+   51  git init
+   52  ls
+   53  ll
+   54  git
+   55  sudo dnf install git
+   56  git init
+   57  ll
+   58  cat Readme.txt 
+   59  ls
+   60  grep git
+   61  ls
+   62  git add Readme.txt 
+   63  ls
+   64  git commit -m "init note"
+   65  git comfig --global --edit
+   66  git config --global --edit
+   67  git commit -m "init note"
+   68  ll
+   69  ls -a
+   70  rm -rf .git
+   71  ls
+   72  git init
+   73  git add Readme.txt 
+   74  git commit -m "init note"
+   75  git comfig --global user.name "xyjincan"
+   76  git config --global user.name "xyjincan"
+   77  git config --global user.email "xyjincan@163.com"
+   78  git commit -m "init note"
+   79  git remote add origin https://github.com/xyjincan/linux-note
+   80  git push -u origin master 
+   81  ls
+   82  git status
+   83  ls
+   84  cd ..
+   85  ls
+   86  ipconfig
+   87  ifconfig
+   88  reboot
+   89  ipconfig
+   90  ifconfig
+   91  ll
+   92  ls
+   93  ping watchers.cc
+   94  cd /home/x
+   95  cd /home/xw
+   96  cd /home/
+   97  ls
+   98  tree
+   99  ls
+  100  ll
+  101  cd ub/
+  102  ls
+  103  cd XX-net/
+  104  ls
+  105  cd SwitchyOmega/
+  106  ls
+  107  cd ..
+  108  ls
+  109  cp SwitchyOmega ~
+  110  cp -R SwitchyOmega  ~
+  111  cd ~
+  112  ls
+  113  cd ../ub
+  114  ls
+  115  cd note/
+  116  ls
+  117  cd ..
+  118  ls
+  119  cd work/
+  120  ls
+  121  ll
+  122  cd ..
+  123  ls
+  124  cd 下载
+  125  s ls
+  126  ll
+  127  cd ~
+  128  ls
+  129  cd note/
+  130  ls
+  131  mv Readme.txt README.md
+  132  ls
+  133  git add README.md 
+  134  git commit -m "init"
+  135  git push -u origin master 
+  136  ll
+  137  ls Readme.txt
+  138  ks
+  139  ls
+  140  cat gitused 
+  141  git pull  https://github.com/xyjincan/linux-note.git
+  142  ll
+  143  ls re
+  144  ls Re
+  145  ls Re*
+  146  ls *
+  147  ls
+  148  git status
+  149  git rm Readme.txt
+  150  git push -u origin master 
+  151  git status
+  152  git commit -m "rm Readme.txt"
+  153  git push -u origin master 
+  154  cd .git/
+  155  tree
+  156  ll
+  157  ls
+  158  cat index 
+  159  ls
+  160  cd ..
+  161  git remove -v
+  162  git remote -v
+  163  git pull
+  164  cd boo
+  165  cd boot
+  166  su
+  167  echo $path
+  168  echo $PATH
+  169  echo $saved_enter
+  170  echo $saved_entry
+  171  ls
+  172  reboot
+  173  ls
+  174  mv *.mp4 *.zip
+  175  ls
+  176  ls *.mp4
+  177  mv 1111.mp4 1111.bka
+  178  ls
+  179  mv 1113.mp4 1113.bak
+  180  mv 1114.mp4 1114.bak
+  181  mv 1115.mp4 1115.bak
+  182  mv 1116.mp4 1116.bak
+  183  mv 1117.mp4 1117.bak
+  184  ls
+  185  mv 1111.bka 1111.bak
+  186  ls
+  187  cd boot
+  188  cd /boot
+  189  su
+  190  ll
+  191  cd 桌面
+  192  ls
+  193  cat trash.desktop 
+  194  cd jc/github/
+  195  ls
+  196  cat init_github.txt 
+  197  vim init_github.txt 
+  198  git add init_github.txt 
+  199  git commit -m "add some inf"
+  200  git status 
+  201  rm .init_github.txt.swp 
+  202  ls
+  203  git status 
+  204  git push origin master 
+  205  git pull origin master 
+  206  git status 
+  207  git banch
+  208  git branch
+  209  git status
+  210  cat init_github.txt 
+  211  git add init_github.txt 
+  212  git commit -m "手动处理冲突"
+  213  git push origin master 
+  214  git add init_github.txt 
+  215  git commit -m "add inf"
+  216  git push origin master 
+  217  ls
+  218  cd ..
+  219  ls
+  220  rm -rf fail_clone
+  221  ls
+  222  mv github github_op
+  223  ls
+  224  ./xx-net
+  225  cd jc/
+  226  cd fail_clone/
+  227  ls
+  228  cat init_github.txt 
+  229  ls
+  230  unzip Go-mfc-vs2015-master.zip 
+  231  ls
+  232  cd Go-mfc-vs2015-master/
+  233  ls
+  234  ls -al
+  235  ping qq.com
+  236  ls
+  237  cat README.md 
+  238  ls
+  239  git clone https://github.com/xyjincan/Go-mfc-vs2015-.git
+  240  ls
+  241  cd rm -rf Go-mfc-vs2015-
+  242  ls
+  243  ls -al
+  244  rm -rf Go-mfc-vs2015-
+  245  ls
+  246  git clone https://github.com/xyjincan/Go-mfc-vs2015.git
+  247  ls
+  248  cd Go-mfc-vs2015/
+  249  ls
+  250  cat LICENSE 
+  251  ls
+  252  cd ..
+  253  ls
+  254  mv * Go-mfc-vs2015
+  255  ls
+  256  cd Go-mfc-vs2015/
+  257  ls
+  258  vim README.md 
+  259  ls
+  260  git add 
+  261  git add .
+  262  ls
+  263  git commit -m "go"
+  264  ls
+  265  git push origin master 
+  266  ls
+  267  ls -al
+  268  ls
+  269  cd note/
+  270  ls
+  271  git status
+  272  git add .
+  273  ls
+  274  cat clang 
+  275  vim gitused 
+  276  ls
+  277  diff new-fedora new-fedora24 
+  278  ls
+  279  cat negix
+  280  cat nginx 
+  281  ls
+  282  cat chromekey 
+  283  ls
+  284  cd google_host/
+  285  ls
+  286  cd ..
+  287  rm -rf google_host
+  288  ls
+  289  cat mysql.txt 
+  290  cat mysql汉字 
+  291  ls
+  292  cd C++/
+  293  ls
+  294  cd ..
+  295  ls
+  296  git status 
+  297  git commit -m "some"
+  298  ls
+  299  git push origin master 
+  300  ls
+  301  cd ..
+  302  ls
+  303  ssh watchers.cc@root
+  304  ssh root@watchers.cc
+  305  ./xx-net 
+  306  ls
+  307  ps -aux
+  308  ls -al
+  309  cd .xx-net/
+  310  ls
+  311  cd gae_proxy/
+  312  ls
+  313  cd ..
+  314  ls
+  315  cd downloads/
+  316  ls
+  317  cat README.md 
+  318  cd ..
+  319  ls
+  320  cd launcher/
+  321  ls
+  322  cd ..
+  323  ls
+  324  cd ~
+  325  ls
+  326  dnf install libQt5X11Extras.so.5
+  327  sudo dnf install libQt5X11Extras.so.5 
+  328  sudo dnf install libQt5X11Extras.so.5 libXss.so.1 
+  329  sudo dnf install update
+  330  sudo dnf update
+  331  sudo dnf update -y
+  332  sudo dnf install vcl
+  333  rpm -ivh google-chrome-beta-57.0.2987.21-1.x86_64.rpm
+  334  sudo dnf update -y
+  335  ls
+  336  rpm --help
+  337  ls
+  338  rpm --allfiles google-chrome-beta-57.0.2987.21-1.x86_64.rpm
+  339  rpm  google-chrome-beta-57.0.2987.21-1.x86_64.rpm
+  340  rpm  -a google-chrome-beta-57.0.2987.21-1.x86_64.rpm
+  341  rpm  -a google-chrome-beta-57.0.2987.21-1.x86_64.rpm google-chrome-beta-57.0.2987.21-1.x86_64.rpm
+  342  rpm -ivh google-chrome-beta-57.0.2987.21-1.x86_64.rpm
+  343  sudo rpm -ivh google-chrome-beta-57.0.2987.21-1.x86_64.rpm
+  344  sudo rpm -i google-chrome-beta-57.0.2987.21-1.x86_64.rpm
+  345  ls
+  346  rpm -i google-chrome-beta-57.0.2987.21-1.x86_64.rpm 
+  347  sudo rpm -i google-chrome-beta-57.0.2987.21-1.x86_64.rpm 
+  348  sudo rpm -F google-chrome-beta-57.0.2987.21-1.x86_64.rpm 
+  349  ls
+  350  rm google-chrome-beta-57.0.2987.21-1.x86_64.rpm 
+  351  ls
+  352  yum install aline
+  353  sudo yum install aline
+  354  sudo yum install alien
+  355  ls
+  356  alien -r netease-cloud-music_1.0.0_amd64_ubuntu16.04.deb 
+  357  ls
+  358  rpm -i netease-cloud-music-1.0.0-2.x86_64.rpm 
+  359  ls
+  360  sudo rpm -ivh netease-cloud-music-1.0.0-2.x86_64.rpm 
+  361  sudo dnf install libcef.so
+  362  sudo rpm -ivh netease-cloud-music-1.0.0-2.x86_64.rpm 
+  363  ls
+  364  sudo rpm -i netease-cloud-music-1.0.0-2.x86_64.rpm 
+  365  sudo rpm -F netease-cloud-music-1.0.0-2.x86_64.rpm 
+  366  sudo rpm -i netease-cloud-music-1.0.0-2.x86_64.rpm 
+  367  sudo rpm -i netease-cloud-music-1.0.0-2.x86_64.rpm --replacefiles 
+  368  rpm -e netease-cloud-music 
+  369  sudo rpm -e netease-cloud-music 
+  370  ls
+  371  sudo yum localinstall netease-cloud-music-1.0.0-2.x86_64.rpm 
+  372  sudo dnf localinstall netease-cloud-music-1.0.0-2.x86_64.rpm 
+  373  sudo dnf install netease-cloud-music-1.0.0-2.x86_64.rpm 
+  374  sudo rpm -i netease-cloud-music-1.0.0-2.x86_64.rpm 
+  375  sudo rpm -i netease-cloud-music-1.0.0-2.x86_64.rpm --replacefiles 
+  376  ls
+  377  cd 下载
+  378  ls
+  379  rpmrebuild -pe ./netease-cloud-music-1.0.0-2.x86_64.rpm
+  380  sudo rpm -i netease-cloud-music-1.0.0-2.x86_64.rpm --replacefiles 
+  381  sudo yum -y --enablerepo=nux-dextop install gstreamer-ffmpeg vlc gstreamer-plugins-ugly gstreamer-ffmpeg gstreamer-plugins-bad gstreamer-plugins-ugly ffmpeg libvdpau mpg123 mplayer mplayer-gui gstreamer-plugins-bad-nonfree gstreamer1-libav gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly 
+  382  sudo dnf install vlc
+  383  sudo dnf install gstreamer0.10-plugins-good
+  384  sudo dnf install gstreamer
+  385  sudo dnf install http://dl-http.senorsen.com/pub/package/linux/rpm/senorsen-repo-0.0.1-1.noarch.rpm
+  386  sudo dnf install netease-cloud-music
+  387  su -c 'dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+  388  sudo dnf install erase netease-cloud-music
+  389  rpm -e netease-cloud-music
+  390  sudo rpm -e netease-cloud-music
+  391  sudo dnf install netease-cloud-music
+  392  sudo dnf update
+  393  sudo dnf install ffmpeg ffmpeg-libs gstreamer-ffmpeg xvidcore libdvdread libdvdnav lsdvd gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly gstreamer-plugins-bad gstreamer1-plugins-ugly libmpg123
+  394  cd /boot/
+  395  su
+  396  reboot
+  397  ls
+  398  ls -a
+  399  ls
+  400  rm netease-cloud-music-1.0.0-2.x86_64.rpm 
+  401  rm netease-cloud-music_1.0.0_amd64_ubuntu16.04.deb 
+  402  ls
+  403  rm OmegaOptions.bak 
+  404  ls
+  405  cp * ~/图片
+  406  cd ~/图片
+  407  ls
+  408  cd ~
+  409  ls
+  410  cd jc/
+  411  ls
+  412  cd github_op/
+  413  ls
+  414  cd ..
+  415  ls
+  416  cd /home
+  417  ls
+  418  cd ub/
+  419  ls
+  420  cd note/
+  421  ls
+  422  git status
+  423  git history
+  424  git help 
+  425  ls
+  426  cd google_host/
+  427  ls
+  428   cat up.sh 
+  429  cd ~
+  430  ls
+  431  cd note/
+  432  ls
+  433  git status
+  434  lz
+  435  ls
+  436  cd SwitchyOmega/
+  437  ls
+  438  history 
+  439  ls
+  440  ./duankou 
+  441  ls
+  442  cat index.html 
+  443  ls
+  444  reboot
+  445  javac
+  446  java -version
+  447  ls
+  448  cd /de
+  449  ls
+  450  cd eclipse/
+  451  ls
+  452  ./eclipse 
+  453  ls
+  454  ./eclipse 
+  455  ls
+  456  cd ..
+  457  ls
+  458  cd /hmoe
+  459  cd /home
+  460  ls
+  461  cd ub
+  462  ls
+  463  cd 下载
+  464  ls
+  465  mv student-choose-courses-master.zip ~
+  466  cd ~
+  467  ls
+  468  unzip student-choose-courses-master.zip 
+  469  ls
+  470  cd student-choose-courses-master/
+  471  ls
+  472  ls
+  473  cat StartDB.cmd 
+  474  ls
+  475  cat StartDB.cmd 
+  476  cd dbms/
+  477  java -cp hsqldb.jar org.hsqldb.Server 
+  478  cd de
+  479  cd /de
+  480  ls
+  481  cd idea-IU-163.12024.16/
+  482  ls
+  483  cd bin
+  484  ls
+  485  sh idea.sh 
+  486  ls
+  487  unzip student-choose-courses-master.zip 
+  488  ls
+  489  cd student-choose-courses-master/
+  490  ls
+  491  cd /de
+  492  ls
+  493  cd idea-IU-163.12024.16/
+  494  s
+  495  ls
+  496  sh bin/idea.sh 
+  497  cd bin/
+  498  ls
+  499  sh startup.sh 
+  500  ls
+  501  sh shutdown.sh 
+  502  ls
+  503  sh startup.sh 
+  504  sh shutdown.sh 
+  505  sh startup.sh 
+  506  ls
+  507  cd ~
+  508  ls
+  509  cd apache-tomcat-9.0.0.M9/
+  510  ls
+  511  cd temp/
+  512  cd ..
+  513  ls
+  514  cd logs/
+  515  ls
+  516  tm *
+  517  ls
+  518  rm *
+  519  ls
+  520  cd ..
+  521  ls
+  522  cd bin/
+  523  lls
+  524  ls
+  525  sh shutdown.sh 
+  526  ls
+  527  sh startup.sh 
+  528  cd ..
+  529  ls
+  530  cd logs/
+  531  ls
+  532  cat StartDB.cmd 
+  533  cd dbms/
+  534  java -cp hsqldb.jar org.hsqldb.Server
+  535  reboot
+  536  ssh root@watchers.cc
+  537  ls
+  538  ssh root@watchers.cc
+  539  tree
+  540  ls
+  541  cd 下载
+  542  ls
+  543  s l
+  544  ls
+  545  rm -rf r
+  546  ls
+  547  sudo rm -rf lost+found
+  548  ls
+  549  tar -czf linux-data.tar.gz 下载 book cpp github java media note
+  550  reboot
+  551  su
+  552  cd /de
+  553  ls
+  554  mvn
+  555  ls
+  556  cat fedoragrub
+  557  ls
+  558  ds
+  559  df
+  560  df -h
+  561  cd /home
+  562  ls
+  563  cd ub/
+  564  ls
+  565  cd app/
+  566  ls
+  567  cd ..
+  568  ls
+  569  ./ss 
+  570  ls
+  571  ./ss
+  572  ls
+  573  make
+  574  ls
+  575  ./test 
+  576  make clean
+  577  s
+  578  ls
+  579  make \
+  580  ls
+  581  makr
+  582  make
+  583  ./test 
+  584  ls
+  585  ./ss 
+  586  rm test 
+  587  ls
+  588  make
+  589  ./ss 
+  590  make
+  591  ./ss 
+  592  make
+  593  ./ss 
+  594  madir bin stc HTTP docroot
+  595  mkdir bin stc HTTP docroot
+  596  ls
+  597  cd ~
+  598  ls
+  599  ll
+  600  ls -a
+  601  ls
+  602  ls -a
+  603  cd .git*
+  604  cat .gitconfig
+  605  ls
+  606  rm ss
+  607  ls
+  608  make
+  609  ab
+  610  sudo dnf install ab
+  611  sudo dnf install apache-utils
+  612  sudo dnf install apache-*
+  613  ls
+  614  sudo dnf uodate
+  615  sudo dnf update
+  616  cd /etc
+  617  sudo vim profile
+  618  source profile
+  619  mvn
+  620  ls
+  621  pwd
+  622  cd /de
+  623  ls
+  624  cd VSCode-linux-x64/
+  625  ls
+  626  ./code
+  627  ./vscode 
+  628  ls
+  629  cd ..
+  630  rm -rf VSCode-linux-x64/
+  631  sudo rm -rf VSCode-linux-x64/
+  632  ls
+  633  sudo rm -rf fedoragrub 
+  634  ls
+  635  sudo rm -rf profile 
+  636  ls
+  637  mvn
+  638  cd apache-maven-3.3.9/
+  639  ls
+  640  cd bin/
+  641  ls
+  642  mvn
+  643  ./mvn
+  644  ls
+  645  pwd
+  646  cd ,,
+  647  cd ..
+  648  ls
+  649  cd /de
+  650  ls
+  651  cd eclipse/
+  652  ls
+  653  ./eclipse 
+  654  ls
+  655  cd ..
+  656  ls
+  657  gcc -o main main.c 
+  658  ls
+  659  gcc -o main main.c 
+  660  clear
+  661  gcc -o main main.c 
+  662  ls
+  663  ./main 
+  664  ./main localhost
+  665  gcc -o main main.c 
+  666  ./main localhost
+  667  sh startup.sh 
+  668  pwd
+  669  ls
+  670  make
+  671  ls
+  672  ./ss 
+  673  ls
+  674  sh shutdown.sh 
+  675  git clone https://github.com/xyjincan/My-College-Code
+  676  ll
+  677  cd My-College-Code/
+  678  ll
+  679  mv linux课程 ~
+  680  ll
+  681  cd ..
+  682  ll
+  683  rm -rf 
+  684  rm -rf My-College-Code
+  685  cd ..
+  686  ll
+  687  gcc execl.c 
+  688  ./a.out 
+  689  gcc execl.c 
+  690  ./a.out 
+  691  ls
+  692  rm ss 
+  693  make
+  694  ls
+  695  ls bin/
+  696  rm bin/ss 
+  697  ls
+  698  make
+  699  rm ss
+  700  make
+  701  ls
+  702  make
+  703  ls
+  704  rm ss 
+  705  make
+  706  ls
+  707  make clean
+  708  lsa
+  709  ls
+  710  rm ss
+  711  make
+  712  ls
+  713  make clean
+  714  ls
+  715  chmod a-x makefile 
+  716  ls
+  717  make
+  718  ls
+  719  make clean
+  720  ls
+  721  rm ss
+  722  make
+  723  ls
+  724  ls bin
+  725  ls
+  726  make clean
+  727  ls
+  728  make
+  729  gcc -o ss main.c -I
+  730  gcc -o ss main.c -I ./
+  731  gcc
+  732  gcc ?
+  733  gcc -?
+  734  gcc --help
+  735  make
+  736  ls
+  737  rm ss
+  738  rm main
+  739  make
+  740  ls
+  741  ls bin
+  742  ./bin/main 
+  743  ls
+  744  make
+  745  gcc
+  746  gcc --help
+  747  gcc main.c -time
+  748  make clean
+  749  ls
+  750  rm a.out 
+  751  ls
+  752  make
+  753  make clean
+  754  ls
+  755  make
+  756  make clean
+  757  ls
+  758  vim demo.sh
+  759  ls
+  760  chmod a+x demo.sh 
+  761  ls
+  762  ./demo.sh 
+  763  ls
+  764  ./demo.sh 
+  765  ls
+  766  ./demo.sh 
+  767  cat /dev/null
+  768  ls /dev/null
+  769  make
+  770  ls
+  771  make clean
+  772  make
+  773  ls
+  774  cat demo.sh 
+  775  ./demo.sh 
+  776  ls
+  777  ./demo.sh 
+  778  ls
+  779  make
+  780  ls
+  781  make clean
+  782  make
+  783  ls
+  784  ./demo.sh 
+  785  ls
+  786  sh demo.sh 
+  787  sh demo.sh ss
+  788  sh demo.sh 
+  789  ./bin/fileserver 
+  790  cd fileserver 
+  791  cd bin/
+  792  ./fileserver 
+  793  mkdir test
+  794  ls
+  795  cd test/
+  796  echo "file" > file.txt
+  797  cd ..
+  798  ls
+  799  vim demo.sh 
+  800  ls
+  801  rm main.o
+  802  ls
+  803  ./demo.sh 
+  804  make clean
+  805  ls
+  806  make
+  807  ls
+  808  make
+  809  ./bin/fileserver 
+  810  cd ?
+  811  cd /
+  812  ./home/f2/ll/bin/fileserver 
+  813  ls
+  814  ./home/f2/ll/bin/fileserver 
+  815  ls
+  816  ./bin/fileserver 
+  817  cd 
+  818  ls
+  819  ./bin/
+  820  ./bin/fileserver 
+  821  make
+  822  sh demo.sh 
+  823  ls
+  824  sh demo.sh 
+  825  ./demo.sh q
+  826  ./demo.sh 
+  827  make
+  828  ./demo.sh 
+  829  trss
+  830  tree
+  831  ls
+  832  ls ./docroot/
+  833  make
+  834  sh demo.sh 
+  835  ls
+  836  cd ..
+  837  ls
+  838  cd http/
+  839  ls
+  840  sh demo.sh 
+  841  ls
+  842  sh demo.sh 
+  843  cd ..
+  844  cd http/bin/
+  845  ./fileserver 
+  846  cd ..
+  847  ls
+  848  sh demo.sh 
+  849  cd ..
+  850  cd http/
+  851  cd bin/
+  852  ./fileserver 
+  853  sh ../demo.sh 
+  854  cd ..
+  855  ls
+  856  ./demo.sh 
+  857  cd bin/
+  858  ls
+  859  ./fileserver 
+  860  cd ..
+  861  ls
+  862  sh demo.sh 
+  863  ./bin/fileserver -s
+  864  ls
+  865  cd .m2
+  866  ls
+  867  start.
+  868  start
+  869  cd ~
+  870  ls
+  871  cd .m2
+  872  mvn
+  873  ls
+  874  cd .m2
+  875  ls
+  876  cd r
+  877  cd repository/
+  878  ls
+  879  mysql -uroot -p
+  880  ls
+  881  cd ~
+  882  ls
+  883  ssh jc@watchers.cc
+  884  cd ~
+  885  netstat -ntlp
+  886  cd note/
+  887  ls
+  888  cat mysql
+  889  mysql -uroot -p
+  890  mysql_secure_installation
+  891  service mysql stop
+  892  service mysql start
+  893  cd ~
+  894  ls
+  895  ./dk
+  896  ls
+  897  mysqld_safe
+  898  mysql -p
+  899  mysqld_safe --skip-grant-tables & 
+  900  cd /bin
+  901  ls
+  902  ls mysql
+  903  ls
+  904  mysql
+  905  ls
+  906  cd ~
+  907  ls
+  908  cd note/
+  909  ls
+  910  mysql
+  911  service
+  912  service mysqld restart
+  913  vim /etc/my.cnf
+  914  sudo vim /etc/my.cnf
+  915  sudo vim /etc/my.cnf
+  916  service mysqld restart
+  917  mysql -uroot
+  918  sudo vim /etc/my.cnf
+  919  service mysqld restart
+  920  mysql -uroot -p
+  921  ls
+  922  cd ~
+  923  ls
+  924  ./xx-net 
+  925  ls
+  926  mvn run
+  927  ls
+  928  mvn spring-boot:run
+  929  mvn clean
+  930  mvn spring-boot:run
+  931  mvn test
+  932  clear
+  933  mvn test
+  934  mvn clean
+  935  ls
+  936  cd ..
+  937  ls
+  938  cd java/
+  939  ls
+  940  cd 2017testboot/
+  941  ls
+  942  mvn clean
+  943  ls
+  944  cat 2017testboot.iml 
+  945  ls
+  946  rm 2017testboot.iml 
+  947  ls
+  948  cat /proc/sys/fs/file-max 
+  949  sudo dnf update =y
+  950  sudo dnf update -y
+  951  tree
+  952  ls
+  953  gcc epoll-example.c 
+  954  ./a.out 
+  955  ./a.out 8080
+  956  cd /home/
+  957  ls
+  958  cd ub/
+  959  sl
+  960  ls -a
+  961  cd .gradle/
+  962  ls
+  963  ls
+  964  ls -a
+  965  mkdir .gradle
+  966  cd .gradle/
+  967  cd work
+  968  cd ~/work
+  969  ks
+  970  ls
+  971  cd wk/ls
+  972  cd wk/
+  973  ls
+  974  cd java/
+  975  ls
+  976  cd 2017
+  977  ls
+  978  cd 2017sboot/
+  979  ls
+  980  mvn clean
+  981  mvn test
+  982  mvn spring-boot:run
+  983  ls
+  984  cd ~
+  985  ls
+  986  ls -a
+  987  cd .android/
+  988  ls
+  989  cd metrics/
+  990  ls
+  991  cd spool/
+  992  ls
+  993  cd ~
+  994  ls
+  995  reboot
+  996  su
+  997  history >> history.txt
