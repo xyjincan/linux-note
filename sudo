@@ -1,1 +1,4 @@
  usermod -a -G wheel jc  
+
+centos
+ etc]# sudo vim sudoers
