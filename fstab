@@ -26,5 +26,9 @@ UUID=4d52d2cb-7267-4a47-ad85-0c939b478446 none            swap    sw            
 
 UUID=7717-5DE0  /home/jc/mymusic  vfat   uid=1000,gid=1000,umask=133,dmask=022,utf8  0  0
 
+UUID=42280D28280D1D13 /opt/media/p6/Windows ntfs-3g defaults 0 0
 
+/dev/disk/by-uuid/18F6B9F0F6B9CE6E /home/jc/fedora auto nosuid,nodev,nofail 0 0
+
+# sudo apt-get install ntfs-3g或者yum install ntfs-3g
 

@@ -1,3 +1,3 @@
-#this is something of linux used note
+# This is some linux usage notes
 
 # fedora & ubuntu

@@ -1,0 +1,13 @@
+
+ 文件列表
+for  
+    mv
+    del
+
+#!/bin/bash
+ml=$(ls)
+for v in ${ml[@]}; do
+    echo $v
+    mv $v $v.py
+done
+

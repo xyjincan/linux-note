@@ -1,0 +1,54 @@
+yum provides semanage 
+yum -y install policycoreutils-python.x86_64
+
+
+CentOS7
+
+semanage port -a -t http_port_t -p tcp 5000
+semanage port -a -t http_port_t -p tcp 80
+
+查看当前端口配置
+semanage port -l
+
+若想删除已停用的端口可使用-d删除命令，
+# semanage port -d -t ssh_port_t -p tcp 6022
+
+若想添加其他已定义的端口（如443）到SSH，可使用-m修改命令，
+# semanage port -m -t ssh_port_t -p tcp 443
+semanage port -m -t http_port_t -p tcp 5000
+
+CentOS 7系统中SELinux全局配置文件为/etc/sysconfig/selinux
+
+SELinux会为进程与文件添加安全信息标签，如：SELinux用户、角色、类型以及可选的级别。
+当运行SELinux后所有这些信息都是访问控制的依据。
+下面通过一个实例文件查看SELinux安全上下文，
+使用ls -Z命令就可以看到文件或目录的这些上下文信息，
+而ps aux CZ则可以查看进程的安全上下文信息：
+[root@centos7 ~]# ls -Z anaconda-ks.cfg -rw-------. root root system_u:object_r:admin_home_t:s0 anaconda-ks.cfg 
+[root@centos7 ~]# ps aux -Z
+
+
+日志档是排除任何疑难的关键，而 SELinux 亦不例外。
+SELinux 缺省会通过 Linux 审计系统（auditd）将日志写在 /var/log/audit/audit.log 内，
+而这项务服缺省为启用的。假若 auditd 并未运行，信息将会被写进 /var/log/messages。
+SELinux 的日志都被标签有 AVC 这个关键字，方便它们从其它信息中过滤出来。
+sealert -b,不运行 X 服务器的人可以通过命令行产生供人阅读的报告：
+sealert -a /var/log/audit/audit.log
+cat /var/log/messages | grep avc:
+
+
+setsebool -P httpd_can_network_connect on
+
+
+临时关闭,开启
+setenforce 0
+setenforce 1
+
+永久关闭,开启
+vi /etc/selinux/config
+将SELINUX=enforcing改为SELINUX=disabled 
+
+
+# If you want to change the port on a SELinux system, you have to tell
+# SELinux about this change.
+# semanage port -a -t ssh_port_t -p tcp #PORTNUMBER

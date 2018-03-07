@@ -1,1 +1,6 @@
 EFI 模式下，不要装同一个发现版两个，（/boot/EFI/efi/xxx引起冲突）
+
+引导修复？！
+
+
+kernel-headers 

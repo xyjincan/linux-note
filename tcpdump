@@ -1,0 +1,19 @@
+tcpdump -i 网卡 
+
+
+-A:以ascli显示数据包（http）
+(http 开启gzip？)
+
+
+tcpdump -i lo -nn 'icmp'
+
+tcpdump -i lo -nn 'host 1.1.1.1'
+tcpdump -i lo -nn 'src host 1.1.1.1'
+tcpdump -i lo -nn 'dst host 1.1.1.1'
+
+tcpdump -i lo -nnA 'port 80'
+
+tcpdump -i lo -nnA 'port 80 and src host 1.1.1.1'
+
+
+192.168.1.101/24

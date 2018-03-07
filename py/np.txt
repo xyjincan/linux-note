@@ -1,0 +1,37 @@
+pip
+pip3
+
+pip install --user pylint
+
+
+sudo yum install python2,3-devel
+
+etc.
+pyname
+PyopenGL PyopenGL_accelerate
+
+image:
+
+PIL Matplotlib pylab
+
+pandas
+scipy
+
+etc:
+statsmodels PyTables PyQt PySide xlrd lxml basemap pymongo requests
+
+pip install --user statsmodels  xlrd lxml  pymongo requests
+pip3 install --user statsmodels  xlrd lxml  pymongo requests
+
+pip install --user PySide
+
+
+Collecting PySide
+  Using cached PySide-1.2.4.tar.gz
+    Complete output from command python setup.py egg_info:
+    only these python versions are supported: [(2, 6), (2, 7), (3, 2), (3, 3), (3, 4)]
+
+性能：
+数组运算，避免复制数据，尽量使用数组视图，切片
+连续内存
+万物皆对象

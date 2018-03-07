@@ -1,0 +1,10 @@
+PID USER       PR  NI    VIRT    RES    SHR S  %CPU %MEM    TIME+   COMMAND                                     
+5019 f6        20   0 8607772 4.833g 4.817g S 162.5 31.1   1:20.19  vmware-vmx                                   
+1464 f6        20   0 3369312  99576  67700 S   6.2  0.6   0:09.96  kwin_x11                                    
+   1 root      20   0  158272  11924   8368 S   0.0  0.1   0:01.75  systemd    
+
+%mem 内存使用率
+virt 是虚拟内存
+res是常驻内存
+shr是共享内存
+

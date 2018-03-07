@@ -1,0 +1,65 @@
+#install
+kernel-headers
+kernel
+kernel-devel
+
+vim
+gcc-g++
+gcc
+nodejs
+git
+
+
+
+vmware
+
+kde wps
+
+
+sudo dnf erase dnfdragora-updater
+systemctl disable dnfdaemon.service
+
+
+1.先查看安装的虚拟机
+
+vmware-installer -l
+
+然后会显示版本和产品名称
+Product Name           Product Version     
+====================== ====================
+vmware-workstation     7.0.1.227600 
+
+2.卸载虚拟机
+
+sudo vmware-installer --uninstall-product vmware-workstation
+
+
+
+
+
+
+
+linux-wps: WPS无法正确地显示某些符合（公式）
+
+Symbol、wingdings、Wingding2、Wingding3、Wingdings、Webdings、MT Extra
+
+kde
+http://bbs.wps.cn/thread-22952886-1-1.html
+
+vim /usr/bin/wps 
+
+gOpt="-style gtk+"
+
+vim /usr/bin/wpp
+gOpt="-style gtk+"
+
+vim /usr/bin/et
+gOpt="-style gtk+"
+
+add file /etc/profile.d/wps_kde_fix.sh
+export WPS_NO_KDE_NATIVE_DIALOG=1
+
+
+
+
+

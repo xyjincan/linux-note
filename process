@@ -1,0 +1,24 @@
+# 进程管理
+
+端口 
+
+进程
+
+进程id
+
+名字
+
+查看
+
+杀死
+
+sudo netstat -apn | grep :22
+
+
+sudo netstat -ntl
+
+
+sudo netstat -tlvp
+
+
+systemctl list-unit-files

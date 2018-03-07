@@ -1,0 +1,29 @@
+#normal
+
+sudo yum install -y  
+
+git gcc gdb gcc-c++ 
+vim telnet wget curl net-toolst tree unzip zip nmap
+
+mysql-community-common
+
+#fedora
+
+#centos
+ 
+#something:
+
+go openssh-server android-tools cmake nodejs npm bnpm cnpm dockers redis mongodb nmap sqlmap virsh
+clang
+java mvn 
+pip install --user sqlmqp
+npm install vue webpack
+sudo cnpm install --global vue-cli
+
+# more
+netease-cloud-music vlc 
+
+
+# cmd
+
+netstat

@@ -1,0 +1,54 @@
+
+
+
+
+# 增大字体大小（kde）
+eclipse/plugins/org.eclipse.ui.themes_1.2.1.v20170809-1435/css/
+
+#org-eclipse-jdt-ui-PackageExplorer Tree,
+#org-eclipse-ui-navigator-ProjectExplorer Tree,
+#org-eclipse-ui-views-ContentOutline Tree,
+#PerspectiveSwitcher ToolBar {
+  font-size: 13px;
+}
+
+
+
+
+all fonts
+
+
+
+菜单 window-preference 
+左侧菜单的树 general-appearance-colours and fonts 
+选择dialog font，点击edit，调整到你希望的字体和大小，点apply生效
+
+
+
+
+
+
+
+
+
+spring mcv  project
+
+
+├── .classpath ( set mvn /WEB-INF/lib <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/> )
+├── pom.xml    ( jst dependencies http://mvnrepository.com/artifact/javax.servlet/javax.servlet-api )
+├── .project
+├── .settings
+│   ├── org.eclipse.wst.common.component   (urldeploy:xxx)
+│   ├── org.eclipse.wst.common.project.facet.core.xml  (java、jst version)
+├── src
+│   ├── main
+        ├── java
+        │   └── packagename
+        ├── resources
+        └── webapp
+            └── WEB-INF
+                └── web.xml (jst version)
+
+
+
+

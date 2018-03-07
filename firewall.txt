@@ -1,0 +1,39 @@
+
+firewalld 配置文件区：/etc/firewalld/zones
+CentOS 7 用firewall-cmd来开放端口如：
+允许3306端口开放
+1. 
+
+(rabbitmq)
+firewall-cmd --permanent --add-port=5672/tcp
+firewall-cmd --reload
+
+(是否必要？ bind=xx.xx.xx.xx ?)
+firewall-cmd --permanent --add-port=3306/tcp
+
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd --permanent --add-port=8080/tcp
+
+firewall-cmd --permanent  --remove-port=8080/tcp
+firewall-cmd --reload
+
+
+重新加载
+2. firewall-cmd --reload
+确认是否开放
+firewall-cmd --list-all
+
+## 将80端口的流量转发至8080
+
+firewall-cmd --permanent --add-forward-port=port=80:proto=tcp:toport=8080
+firewall-cmd --remove-forward-port=port=80:proto=tcp:toport=8080:toaddr=     
+
+对比
+iptables -t nat -A PREROUTING -p tcp -i eno16777736 -d 192.168.91.129 --dport 10001 -j DNAT --to 192.168.91.129:8080  
+
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
+sudo systemctl enable firewalld
+
+
+被默认的防火墙拦截:telnet: connect to address xx: No route to host and mysql 连不上，navicat报错

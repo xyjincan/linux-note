@@ -1,4 +1,4 @@
- usermod -a -G wheel jc  
+usermod -a -G wheel jc  
 
 centos
- etc]# sudo vim sudoers
+etc]# sudo vim sudoers

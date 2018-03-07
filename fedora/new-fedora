@@ -36,3 +36,18 @@ sudo dnf install fcitx-sunpinyin
 #reboot
 
 echo “尽情的使用吧！”
+
+[f6@ET ~]$ sudo dnf remove kdeconnectd
+依赖关系解决。
+===========================================================================================================
+ 软件包                        架构                版本                       仓库                    大小
+===========================================================================================================
+移除:
+ kdeconnectd                   x86_64              1.2-1.fc26                 @updates                21 k
+Removing dependent packages:
+ kde-connect                   x86_64              1.2-1.fc26                 @updates               1.1 M
+ kde-connect-libs              x86_64              1.2-1.fc26                 @updates               1.5 M
+正在清除未被使用的依赖关系:
+ fuse-sshfs                    x86_64              2.8-2.fc26                 @anaconda              103 k
+ libfakekey                    x86_64              0.1-16.fc26                @anaconda               28 k
+

@@ -1,0 +1,67 @@
+
+
+scp -r /home/space/music/ root@www.cumt.edu.cn:/home/root/others/  
+
+
+scp jincan.tar.gz root@wujincan.cn:/root/
+
+
+ssh jc@wujincan.cn
+
+
+
+ssh 免登录 整理
+
+local(用户:tx) server（用户:sx）
+目标:local 可以直接ssh 登录 server，无需密码
+
+su xx
+cd ～/.ssh/
+
+
+su tx
+cd ～/.ssh/
+
+ssh-keygen -t rsa 一路狂按回车,最终生成（id_rsa,id_rsa.pub两个文件）.
+ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
+
+最终生成（id_rsa,id_rsa.pub两个文件）.
+
+将local:tx:~/.ssh/id_rsa.pub 追加到 server:sx:~/.ssh/authorized_keys
+
+即可ssh无密码登录到server
+
+
+
+
+#!/bin/bash
+
+# 配置ssh免密码登陆（使用本地公钥id_rsa.pub）
+# 生成本地密钥命令 ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+
+
+# 权限？
+
+mypubkey=$(cat ~/.ssh/id_rsa.pub)
+mypasswd='xxxxx'
+myip='127.0.0.1'
+
+/usr/bin/expect <<-EOF
+set timeout 3                      
+spawn ssh root@$myip
+expect {
+  "*yes/no" { send "yes\r"; exp_continue }
+  "*password:" { send "$mypasswd\r" }
+}
+expect "*#"
+send "df -h\r" 
+expect "*#"
+send "echo '$mypubkey' >> ~/.ssh/authorized_keys\r"
+expect "*#"
+send "chmod 600 ~/.ssh/authorized_keys\r"
+expect "*#"
+send "exit\n"
+interact       
+expect eof
+EOF
+echo ""

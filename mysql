@@ -1,23 +1,37 @@
 depend: mecab  mecab-ipadic
+
+remove mariadb-libs postfix
+
 sudo yum install mysql-community-{server,client,common,libs}-* 
 
+[postfix]
+
 sudo service mysqld start
-
+mysql_secure_installation
 sudo grep 'temporary password' /var/log/mysqld.log
-
 
 shell> mysql -uroot -p
 
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Mysql@123';
+
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Fedora@123';
 
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Jincan@123';
+ FLUSH PRIVILEGES; 
 sudo systemctl enable mysqld
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'OpenStack-123';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'OpenStack-123' WITH GRANT OPTION;
+flush privileges;
+firewall-cmd --permanent --add-port=3306/tcp
+firewall-cmd --reload
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'Mysql@123' WITH GRANT OPTION;
 
 
 mima : root
 
-mysql_secure_installation
-
-
+忘记mysql密码
 1.修改my.cnf
 
  vi /etc/my.cfn
@@ -42,6 +56,38 @@ flush privileges;
 quit;
 
 
+/etc/my.cnf
+
+(例如OpenStack)
+[mysqld]
+bind-address = 10.0.0.11
+
+default-storage-engine = innodb
+innodb_file_per_table = on
+max_connections = 4096
+collation-server = utf8_general_ci
+character-set-server = utf8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 丢弃
+
+
+
+
 
   amarok.x86_64 2.8.90-8.fc25                                 amarok-libs.x86_64 2.8.90-8.fc25                        
   amarok-utils.x86_64 2.8.90-8.fc25                           audiocd-kio.x86_64 16.08.2-1.fc25                       
@@ -60,13 +106,8 @@ quit;
   qt5-qtbase-mysql.x86_64 5.7.0-3.fc25                        qtscriptbindings.x86_64 0.2.0-11.fc24                   
   sg3_utils-libs.x86_64 1.41-3.fc24                           taglib-extras.x86_64 1.0.1-13.fc24     
 
-  
-  
-  
-  
-  
-  
-Mysql 汉字支持
+
+Mysql 汉字支持ubuntu
  
 # For advice on how to change settings please see
 # http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html
@@ -118,3 +159,60 @@ default-character-set=utf8
 [mysqld_safe]
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
+
+
+ 
+# For advice on how to change settings please see
+# http://dev.mysql.com/doc/refman/5.6/en/server-configuration-defaults.html
+
+[mysqld]
+#
+# Remove leading # and set to the amount of RAM for the most important data
+# cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.
+# innodb_buffer_pool_size = 128M
+#
+# Remove leading # to turn on a very important data integrity option: logging
+# changes to the binary log between backups.
+# log_bin
+#
+# Remove leading # to set options mainly useful for reporting servers.
+# The server defaults are faster for transactions and fast SELECTs.
+# Adjust sizes as needed, experiment to find the optimal values.
+# join_buffer_size = 128M
+# sort_buffer_size = 2M
+# read_rnd_buffer_size = 2M
+
+
+[client]
+default-character-set=utf8
+
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+user=mysql
+#Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+
+
+mysql 汉字
+#default-character-set=utf8
+character-set-server=utf8
+init_connect='SET NAMES utf8'
+
+
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+
+# Recommended in standard MySQL setup
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES 
+
+
+
+[mysql]
+no-auto-rehash
+default-character-set=utf8
+
+[mysqld_safe]
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
+

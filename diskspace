@@ -1,0 +1,24 @@
+ 
+文件系统        容量  已用  可用 已用% 挂载点
+devtmpfs        7.8G     0  7.8G    0% /dev
+tmpfs           7.8G     0  7.8G    0% /dev/shm
+tmpfs           7.8G  1.6M  7.8G    1% /run
+tmpfs           7.8G     0  7.8G    0% /sys/fs/cgroup
+/dev/sda6        18G   14G  2.9G   83% /
+tmpfs           7.8G   24K  7.8G    1% /tmp
+/dev/sda7        15G  3.4G   11G   24% /opt/media/p6/myfile
+/dev/sda5        50G   25G   22G   53% /home
+/dev/sda2        96M   38M   59M   39% /boot/efi
+/dev/sda8        52G   34G   19G   65% /opt/media/p6/data
+/dev/sda4        89G   43G   46G   49% /opt/media/p6/Windows
+tmpfs           1.6G   16K  1.6G    1% /run/user/1000
+
+# 使用参考
+
+/lib : 1.8G
+
+/usr : 6.6G
+
+/var : 1.6G
+
+/sys : 1.1G

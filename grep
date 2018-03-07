@@ -1,0 +1,3 @@
+查找以-开头的字符串
+echo "erewjhhrewh-1ewhfr" | grep -e "-1"
+ 
