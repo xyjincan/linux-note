@@ -1,4 +1,4 @@
-tcpdump -i 网卡 
+tcpdump -i wlp1s0 
 
 
 -A:以ascli显示数据包（http）

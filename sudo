@@ -1,4 +1,8 @@
-usermod -a -G wheel jc  
+su -c "whoami"
 
-centos
-etc]# sudo vim sudoers
+
+
+usermod -a -G wheel jc
+
+#centos
+sudo vim /etc/sudoers

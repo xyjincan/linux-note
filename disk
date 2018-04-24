@@ -3,4 +3,8 @@ df
 
 sudo fdisk -l
 
-ls -l /dev/disk/by-uuid/ 
+ls -l /dev/disk/by-uuid/
+
+
+
+

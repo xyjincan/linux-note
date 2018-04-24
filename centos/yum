@@ -1,0 +1,8 @@
+yum -y install epel-release 
+
+
+yum -y install centos-release-xen
+
+
+yum clean all && yum makecache
+

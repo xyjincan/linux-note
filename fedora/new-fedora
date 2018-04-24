@@ -27,15 +27,27 @@ sudo dnf install gcc-c++
 
 
 #fedora 23 kde 安装中文输入法
-
 sudo dnf install fcitx fcitx-pinyin fcitx-configtool fcitx-qt5 im-chooser fcitx-sunpinyin
-sudo dnf install fcitx-qt5
-sudo dnf install im-chooser
-sudo dnf install fcitx-sunpinyin
+
+
+#事务概要
+
 #重启之后，一切都ok啦，sunpinyin万岁
 #reboot
 
 echo “尽情的使用吧！”
+
+firefox
+
+
+# 删除一些不使用软件uget
+sudo dnf erase kdeconnectd
+sudo dnf erase konqueror qupzilla 
+sudo dnf erase ktp-accounts-kcm 
+sudo dnf erase kmines kmahjongg kpat
+sudo dnf erase calligra-core calligra-libs
+sudo dnf erase clamz amarok
+
 
 [f6@ET ~]$ sudo dnf remove kdeconnectd
 依赖关系解决。

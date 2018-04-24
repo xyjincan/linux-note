@@ -1,0 +1,67 @@
+mariadb
+
+使用源下载，，，
+https://mirrors.tuna.tsinghua.edu.cn/mariadb//mariadb-10.2.14/yum/centos74-amd64/
+
+
+
+Here is your custom MariaDB YUM repository entry for CentOS. Copy and paste it into a file under /etc/yum.repos.d/ (we suggest naming the file MariaDB.repo or something similar).
+
+# MariaDB 10.2 CentOS repository list - created 2018-04-21 14:20 UTC
+# http://downloads.mariadb.org/mariadb/repositories/
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.2/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+
+After the file is in place, install MariaDB with:
+
+sudo yum install MariaDB-server MariaDB-client
+
+
+
+
+
+
+
+mariadb-server mariadb-devel mariadb 
+ 
+ 
+install start enable  
+
+mysql_secure_installation
+
+[root@view ~]# mysql  --version
+mysql  Ver 15.1 Distrib 5.5.56-MariaDB, for Linux (x86_64) using readline 5.1
+
+
+第五步：CentOS 7 开放防火墙端口
+在第四步后如果还是不能远程连上数据库的话应该就是3306端口被防火墙拦截了，这时我们就需要关闭防火墙或者开放防火墙端口。
+关闭防火墙：
+systemctl stop firewalld.service            #停止firewall
+systemctl disable firewalld.service        #禁止firewall开机启动
+开放防火墙端口，开启后要重启防火墙：
+firewall-cmd --zone=public --add-port=3306/tcp --permanent
+firewall-cmd --reload
+第六步：设置数据库字母大小写不敏感
+vi /etc/my.cnf.d/server.cnf
+在[mysqld]下加上】
+lower_case_table_names=1
+默认是等于0的,即大小写敏感。改成1就OK了。如果之前已经建了数据库要把之前建立的数据库删除，重建才生效。
+第七步：设置MariaDB数据库默认编码
+MariaDB的默认编码是latin1，插入中文会乱码，因此需要将编码改为utf8。
+1.登录，使用以下命令查看当前使用的字符集，应该有好几个不是utf8格式。
+SHOW VARIABLES LIKE 'character%';
+
+2.修改的配置文件
+vi /etc/my.cnf.d/client.cnf
+在[client]字段里加入
+default-character-set=utf8
+vi /etc/my.cnf.d/server.cnf
+
+在[mysqld]字段里加入
+character-set-server=utf8
+
+
+select User,host from mysql.user;

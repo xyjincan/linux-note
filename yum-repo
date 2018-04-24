@@ -1,0 +1,20 @@
+/etc/yum.repos.d/
+
+yum = Yellow dog Updater, Modified
+
+yum install https://mirrors.tuna.tsinghua.edu.cn/mariadb//mariadb-10.2.14/yum/centos74-amd64/rpms/MariaDB-10.2.13-centos74-x86_64-client.rpm
+
+
+yum命令本身就可以用来下载一个RPM包，标准的yum命令提供了--downloadonly(只下载)的选项来达到这个目的。
+$ sudo yum install --downloadonly <package-name>
+默认情况下，一个下载的RPM包会保存在下面的目录中:
+/var/cache/yum/x86_64/[centos/fedora-version]/[repository]/packages
+以上的[repository]表示下载包的来源仓库的名称(例如：base、fedora、updates)
+如果你想要将一个包下载到一个指定的目录(如/tmp)：
+$ sudo yum install --downloadonly --downloaddir=/tmp <package-name>
+注意，如果下载的包包含了任何没有满足的依赖关系，yum将会把所有的依赖关系包下载，但是都不会被安装。
+另外一个重要的事情是，在CentOS/RHEL 6或更早期的版本中，你需要安装一个单独yum插件(名称为 yum-plugin-downloadonly)才能使用--downloadonly命令选项：
+$ sudo yum install yum-plugin-downloadonly
+
+
+yum provides ifconfig

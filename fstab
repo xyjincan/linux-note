@@ -32,3 +32,9 @@ UUID=42280D28280D1D13 /opt/media/p6/Windows ntfs-3g defaults 0 0
 
 # sudo apt-get install ntfs-3g或者yum install ntfs-3g
 
+# mount 默认显示当前分区挂载信息
+
+# sudo mount  -a /etc/fstab  通过配置挂载分区 （检查）
+
+# sudo blkid  查看磁盘uuid
+

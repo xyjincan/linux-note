@@ -1,3 +1,11 @@
 # This is some linux usage notes
-
-# fedora & ubuntu
+```
+    Fedora
+    Centos
+    Ubuntu
+```
+```
+1、command...
+2、tools...
+3、configure...
+```

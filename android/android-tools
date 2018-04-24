@@ -1,0 +1,30 @@
+adb
+
+adb devices
+
+Bus 001 Device 007: ID 04e8:6860 Samsung Electronics Co., Ltd Galaxy (MTP)
+
+adb shell input keyevent 3(home) 4(back)
+
+adb shell input tap 250 250
+
+adb shell input swipe 250 250 300 300
+(x1 y1 x2 y2)
+
+#左滑动
+adb shell input swipe 20 800 600 800
+#右滑动
+adb shell input swipe 600 800 60 800
+
+
+[jc@te ~]$ adb devices
+List of devices attached
+* daemon not running. starting it now at tcp:5037 *
+* daemon started successfully *
+
+
+
+fastboot
+img2simg
+simg2img
+

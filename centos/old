@@ -1,0 +1,22 @@
+service 
+    service httpd start|stop|restart|status
+    
+
+chkconfig
+
+    chkconfig httpd on
+    chkconfig httpd off
+
+ chkconfig --list sshd
+ chkconfig --add testsrv
+ 
+ 
+ 
+ 指令名称	centos 6	centos 7
+启动服务	service httpd start	systemctl start httpd.service
+关闭服务	service httpd stop	systemctl stop httpd.service
+重启服务	service httpd restart	systemctl restart httpd.service
+查看服务状态	service httpd status	systemctl status httpd.service
+设置服务开机启动	chkconfig httpd on	systemctl enable httpd.service
+设置服务开机关闭	chkconfig httpd off	systemctl disable httpd.service
+查看服务开机启动	chkconfig –list	systemctl list-units –type=service

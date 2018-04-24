@@ -1,9 +1,14 @@
-sudo rpm -Uhv http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-23.noarch.rpm
+sudo rpm -Uhv http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-27.noarch.rpm
 
 
-sudo rpm -Uhv http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-23.noarch.rpm
+sudo rpm -Uhv http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-27.noarch.rpm
 
 
+sudo dnf install vlc
 
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+  
+sudo dnf copr enable yelanxin/netease-cloud-music
+sudo dnf install netease-cloud-music
 
 $ dnf config-manager --add-repo=http://repo.fdzh.org/FZUG/FZUG.repo (For Fedora 22+)

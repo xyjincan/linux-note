@@ -1,6 +1,9 @@
 
-[f6@ET ~]$ sudo systemctl stop docker-containerd.service
-[f6@ET ~]$ sudo systemctl stop docker docker-storage-setup
+
+docker run -h mysql57 --name mysql57 -e MYSQL_ROOT_PASSWORD=Jincan@123 -d docker.io/mysql
+
+
+sudo systemctl stop docker docker-containerd.service docker-storage-setup
 
 
 

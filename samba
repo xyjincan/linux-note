@@ -1,0 +1,16 @@
+sudo dnf install cifs-utils samba
+
+
+# mkdir /mnt/samba_test
+# mount -t cifs -o username=Administrator,password=**** //10.1.108.14/samba_test /mnt/samba_test
+
+
+
+linux 访问samba：安装  cifs-utils 和samba 
+
+samba windows与linux互相访问
+https://blog.csdn.net/zistxym/article/details/52301497
+
+
+
+https://blog.csdn.net/u012654882/article/details/47320805

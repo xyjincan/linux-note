@@ -65,3 +65,49 @@ interact
 expect eof
 EOF
 echo ""
+
+
+#!/bin/bash
+
+# 自动配置ssh免密码登陆脚步（使用本地公钥id_rsa.pub）
+# 预先 生成本地密钥命令: ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+# ~/.ssh/id_rsa
+# 权限？
+
+mypubkey=$(cat ~/.ssh/id_rsa.pub)
+echo $1
+echo $2
+myip='127.0.0.1'
+mypasswd='root'
+myip=$1
+mypasswd=$2
+
+/usr/bin/expect <<-EOF
+set timeout 3
+spawn ssh root@$myip
+expect {
+  "*yes/no" { send "yes\r"; exp_continue }
+  "*password:" { 
+    send "$mypasswd\r";
+  }
+}
+expect "*#";
+send "whoami \r";
+expect "*#";
+send "mkdir /root/.ssh\r";
+expect "*#";
+send "echo '$mypubkey' >> /root/.ssh/authorized_keys\r";
+expect "*#";
+send "chmod 600 /root/.ssh/authorized_keys\r";
+expect "*#";
+send "exit\n";
+expect eof
+EOF
+
+# \r 换行
+# >> 追加到信任公钥
+# 注意：expect脚本必须以interact或expect eof结束，执行自动化任务通常expect eof就够了。
+# interact 执行完成后保持交互状态，把控制权交给控制台，这个时候就可以手工操作了。如果没有这一句登录完成后会退出，而不是留在远程终端上。如果你只是登录过去执行 
+# 使用exp_continue后，会重新从当前expect块的开始重新执行，可以简单理解问while循环的continue
+
+

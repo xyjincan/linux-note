@@ -3,7 +3,7 @@
 sudo yum install -y  
 
 git gcc gdb gcc-c++ 
-vim telnet wget curl net-toolst tree unzip zip nmap
+vim telnet wget curl net-tools tree unzip zip nmap
 
 mysql-community-common
 
@@ -13,12 +13,23 @@ mysql-community-common
  
 #something:
 
+sqlmap 
+
 go openssh-server android-tools cmake nodejs npm bnpm cnpm dockers redis mongodb nmap sqlmap virsh
 clang
 java mvn 
-pip install --user sqlmqp
+pip install --user sqlmap
+
 npm install vue webpack
+
 sudo cnpm install --global vue-cli
+
+# php golang
+
+sudo dnf install php golang
+# 依赖httpd
+
+
 
 # more
 netease-cloud-music vlc 

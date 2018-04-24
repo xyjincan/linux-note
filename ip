@@ -1,9 +1,22 @@
+ root用户
+
+ip addr show dev enp0s31f6
+ip addr add 192.168.123.123/24 dev enp0s31f6
+
+cat /proc/net/arp
+ip neigh show dev enp0s31f6
+ip neigh replace 192.168.1.136 lladdr fc:42:03:8d:a9:cf nud permanent dev br-lan
+
+
+
 netstat -ntlp
 ip addr
 #
 #10.105.17.17 115.159.46.158 centos7
 #
 #10.105.15.219	182.254.158.106 newCT
+
+
 
 
 #for centos fedora
@@ -16,5 +29,19 @@ DNS1=223.5.5.5
 DNS2=119.29.29.29
 IPADDR1=10.10.1.133
 PREFIX1=24
+
+
+ping qq.com | while read pong; do echo "$(date):$pong"; done
+
+ping 119.29.29.29 | while read pong; do echo "$(date):$pong"; done
+
+
+
+ip xx {add|change|replace}
+                                                      [ CONFFLAG-LIST ]
+ip xx del
+ip xx {save|flush}
+ip xx [ show [ dev IFNAME ]
+ip xx {showdump|restore}
 
 

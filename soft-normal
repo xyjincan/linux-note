@@ -1,0 +1,135 @@
+
+sudo dnf install kernel-devel-$(uname -r)
+
+sudo dnf install kernel-headers.x86_64
+
+sudo dnf install kernel-$(uname -r) kernel-core-$(uname -r) kernel-modules-$(uname -r) kernel-modules-extra-$(uname -r)
+
+
+
+vmware
+
+kde wps
+
+
+sudo dnf erase dnfdragora-updater
+systemctl disable dnfdaemon.service
+
+
+1.先查看安装的虚拟机
+
+vmware-installer -l
+
+然后会显示版本和产品名称
+Product Name           Product Version     
+====================== ====================
+vmware-workstation     7.0.1.227600 
+
+2.卸载虚拟机
+
+sudo vmware-installer --uninstall-product vmware-workstation
+sudo  vmware-installer -u vmware-workstation
+
+
+wget http://kdl.cc.ksosoft.com/wps-community/download/a21/wps-office-10.1.0.5672-1.a21.x86_64.rpm
+
+sudo dnf install wps-office-10.1.0.5672-1.a21.x86_64.rpm
+
+
+
+linux-wps: WPS无法正确地显示某些符合（公式）
+
+Symbol、wingdings、Wingding2、Wingding3、Wingdings、Webdings、MT Extra
+
+
+
+
+kde
+
+http://bbs.wps.cn/thread-22952886-1-1.html
+
+vim /usr/bin/wps
+gOpt="-style gtk+"
+
+vim /usr/bin/wpp
+gOpt="-style gtk+"
+
+vim /usr/bin/et
+gOpt="-style gtk+"
+
+add file /etc/profile.d/wps_kde_fix.sh
+export WPS_NO_KDE_NATIVE_DIALOG=1
+
+
+http://www.linuxidc.com/Linux/2014-03/98362.htm
+
+http://blog.sina.com.cn/s/blog_6233833e0100rd5t.html 
+ 
+http://forum.ubuntu.org.cn/viewtopic.php?t=297227
+
+https://opensuse-guide.ustclug.org/kde.php
+
+http://blog.chinaunix.net/uid-30201919-id-4970097.html
+
+http://book.51cto.com/art/201001/175508.htm
+
+
+https://www.baidu.com/s?wd=kde%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6&pn=10&oq=kde%20%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6&ie=utf-8&rsv_pq=ea0e496200062ade&rsv_t=6228VOuXdSRfNWO3Pc5yGULRXiDGeuXe3UpYKk2olk3VUAvwckKtKih17g0&rsv_page=1
+
+
+
+
+cat << EOF > /etc/yum.repos.d/google-chrome.repo
+[google-chrome]
+name=google-chrome - \$basearch
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/\$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+EOF
+
+dnf install google-chrome-stable
+
+
+
+# 删除一些不使用软件uget vlc
+sudo dnf erase kdeconnectd
+sudo dnf erase konqueror qupzilla 
+sudo dnf erase ktp-accounts-kcm 
+sudo dnf erase kmines kmahjongg kpat
+sudo dnf erase calligra-core calligra-libs
+sudo dnf erase clamz amarok
+
+sudo dnf erase kf5-akonadi-server
+
+[jc@te ~]$ sudo dnf erase mariadb*
+依赖关系解决。
+====================================================================================================================
+ 软件包                               架构               版本                           仓库                   大小
+====================================================================================================================
+移除:
+ mariadb                              x86_64             3:10.2.12-5.fc27               @updates               38 M
+ mariadb-backup                       x86_64             3:10.2.12-5.fc27               @updates               22 M
+ mariadb-common                       x86_64             3:10.2.12-5.fc27               @updates              196 k
+ mariadb-config                       x86_64             3:10.2.12-5.fc27               @updates              1.3 k
+ mariadb-embedded                     x86_64             3:10.2.12-5.fc27               @updates               18 M
+ mariadb-errmsg                       x86_64             3:10.2.12-5.fc27               @updates              2.2 M
+ mariadb-gssapi-server                x86_64             3:10.2.12-5.fc27               @updates               16 k
+ mariadb-libs                         x86_64             3:10.2.12-5.fc27               @updates              343 k
+ mariadb-rocksdb-engine               x86_64             3:10.2.12-5.fc27               @updates               13 M
+ mariadb-server                       x86_64             3:10.2.12-5.fc27               @updates               85 M
+ mariadb-server-utils                 x86_64             3:10.2.12-5.fc27               @updates               11 M
+ mariadb-tokudb-engine                x86_64             3:10.2.12-5.fc27               @updates              2.3 M
+Removing dependent packages:
+ kf5-akonadi-server-mysql             x86_64             17.12.2-1.fc27                 @updates              3.4 k
+ perl-DBD-MySQL                       x86_64             4.043-6.fc27                   @updates              352 k
+ qt5-qtbase-mysql                     x86_64             5.9.4-4.fc27                   @updates               77 k
+正在清除未被使用的依赖关系:
+ bison                                x86_64             3.0.4-8.fc27                   @anaconda             2.1 M
+ perl-DBI                             x86_64             1.637-1.fc27                   @anaconda             1.8 M
+ perl-Math-BigInt                     noarch             1:1.9998.11-4.fc27             @anaconda             679 k
+ perl-Math-Complex   
+ 
+ 
+ #??? plasma-pk-updates sudo dnf erase plasma-pk-updates
+

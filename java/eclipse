@@ -1,3 +1,10 @@
+Java JRE推荐配置：(不同电脑互相拷贝时可以直接运行)
+    System library：
+        Execution environment：JavaSE-1.x
+
+
+
+
 /opt/media/p6/myfile/com/eclipse-o/eclipse/plugins/org.eclipse.ui.themes_1.2.1.v20170809-1435/css/
 
 CTabFolder.MArea .MPartStack, CTabFolder.MArea .MPartStack.active {
