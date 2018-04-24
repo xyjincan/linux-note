@@ -1,0 +1,73 @@
+# 进程管理
+
+端口 
+
+进程
+
+进程id
+
+名字
+
+查看
+
+杀死
+
+sudo netstat -apn | grep :22
+
+
+sudo netstat -ntl
+
+
+sudo netstat -tlvp
+
+
+systemctl list-unit-files
+
+
+
+du -ah --max-depth=1 /var
+
+df -h
+
+目录大小
+
+目录下文件大小
+
+目录子目录文件大小
+
+no space left
+
+sudo yum install lsof
+lsof  /home/jc/
+于是我通过 lsof 命令查看了被进程占用中的文件：
+就是有些文件删除时还被其它进程占用，此时文件并未真正删除，
+只是标记为 deleted，只有进程结束后才会将文件真正从磁盘中清除。
+lsof | grep deleted
+
+关于磁盘空间告警 df -h --max=1 与 du -hx --max=1 显示不一致的问题，
+最常见的的还是下面这种情况：(重启进程)
+lsof|grep -i delete
+
+
+sudo lsof -i:3306
+
+
+
+
+
+
+        我们知道， 根据ps -aux | grep xxx就是很快实现进程名和进程号的互查， 
+		所以我们只说进程号pid就行。 如下示例中， 进程pid常驻。
+
+        1.  根据进程pid查端口：
+             lsof -i | grep pid
+
+        2.  根据端口port查进程（某次面试还考过）：
+            lsof  -i:port     
+
+        3. 根据进程pid查端口：
+           netstat -nap | grep pid
+
+        4.  根据端口port查进程
+           netstat -nap | grep port
+		   

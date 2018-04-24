@@ -10,8 +10,8 @@ git push -u origin master
 
 
 
-
-
+# ntfs  文件权限问题
+git config  core.filemode false
 
 
 

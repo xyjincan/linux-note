@@ -1,0 +1,17 @@
+sudo rpm -i netease-cloud-music-1.0.0-2.x86_64.rpm --replacefiles 
+
+
+sudo dnf install http://dl-http.senorsen.com/pub/package/linux/rpm/senorsen-repo-0.0.1-1.noarch.rpm
+
+sudo dnf install gstreamer
+
+
+ 
+sudo dnf install gstreamer vlc ffmpeg ffmpeg-libs gstreamer-ffmpeg xvidcore libdvdread libdvdnav lsdvd gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly gstreamer-plugins-bad gstreamer1-plugins-ugly libmpg123
+
+
+sudo dnf install ffmpeg ffmpeg-libs gstreamer-ffmpeg xvidcore libdvdread libdvdnav lsdvd gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly gstreamer-plugins-bad gstreamer1-plugins-ugly libmpg123
+
+
+nature, 密钥 ID 6806a9cb: NOKEY
+导入 GPG 公钥 0x6806A9CB:

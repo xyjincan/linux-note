@@ -1,0 +1,75 @@
+
+ pgdg-centos10  
+ 
+ yum install https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
+ 
+ 
+
+
+
+
+yum install postgresql10-server postgresql10
+/usr/pgsql-10/bin/postgresql-10-setup initdb
+
+
+
+
+
+firewall-cmd --permanent --add-port=5432/tcp  
+firewall-cmd --permanent --add-port=80/tcp  
+firewall-cmd --reload 
+
+
+7.修改用户密码
+
+    su - postgres  切换用户，执行后提示符会变为 '-bash-4.2$'
+    psql -U postgres 登录数据库，执行后提示符变为 'postgres=#'
+    ALTER USER postgres WITH PASSWORD 'Jincan@123'  设置postgres用户密码为
+    \q  退出数据库
+8.开启远程访问
+
+     vim /var/lib/pgsql/10/data/postgresql.conf
+    修改#listen_addresses = 'localhost'  为  listen_addresses='*'
+    当然，此处‘*’也可以改为任何你想开放的服务器IP
+9.信任远程连接
+
+    vim /var/lib/pgsql/10/data/pg_hba.conf
+    修改如下内容，信任指定服务器连接
+    # IPv4 local connections:
+    host    all            all      127.0.0.1/32      trust
+    host    all            all      192.168.157.1/32（需要连接的服务器IP）  trust
+10.重启服务
+
+# open pg connect
+host    all            all      127.0.0.1/32      trust
+host    all            all      10.66.10.31/24      trust
+
+systemctl restart postgresql-10
+
+https://www.cnblogs.com/stulzq/p/7766409.html
+
+
+Install the repository RPM:
+yum install https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-redhat10-10-2.noarch.rpm
+Install the client packages:
+yum install postgresql10
+Optionally install the server packages:
+yum install postgresql10-server
+Optionally initialize the database and enable automatic start:
+/usr/pgsql-10/bin/postgresql-10-setup initdb
+systemctl enable postgresql-10
+systemctl start postgresql-10
+INCLUDED IN DISTRIBUTION
+These distributions all include PostgreSQL by default. To install PostgreSQL from these repositories, use the yum command on RHEL 5,6 and 7, or dnf command on Fedora 24+:
+
+yum install postgresql-server
+
+or dnf command on Fedora 24+:
+
+dnf install postgresql-server
+
+
+
+
+
+postgresql-server.x86_64.0.9.2.23-3.el7_4
