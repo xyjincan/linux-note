@@ -1,0 +1,10 @@
+## 文件共享
+
+
+### SMB
+
+	yum install samba
+		配置文件目录/etc/samba
+		/etc/samba/smb.conf是samba的核心配置文件
+		
+

@@ -1,0 +1,49 @@
+
+## VMware Virtual SAN
+
+利用服务器本地资源提供类似分布式存储技术
+
+简化 高效 快速
+
+
+VM级别的存储策略
+
+动态按需分配
+
+管理 维护 扩容简单
+
+
+利用SSD HDD磁盘资源组合，构成基础构成单元
+
+不再要求外部传统存储
+
+面向对象的存储（）
+    VM Home Namespace 
+    VMDK
+    VM SWap Object
+    Snapshot Delta VMDK
+    Memory Object
+
+
+
+
+
+
+## SSD SD存储卡orU盘 磁盘
+
+
+
+
+
+## 关键概念
+
+    JBOD(非阵列类型的磁盘设备)
+    Disk Group（磁盘组，SSD与HDD或者是全闪存构成）是每台
+        Virtual SAN Cluster节点的基础存储单元。
+        灵活扩容、维护
+
+    
+
+    
+
+
