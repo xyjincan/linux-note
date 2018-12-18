@@ -24,6 +24,13 @@ List of devices attached
 
 
 
+# 
+   先usb连接，打开端口 adb tcpip 5555
+   保持usb连接，同时连接网络调试 adb connect 1.1.1.1
+   断开usb
+
+   # adb -s 10.42.0.26:5555 shell
+
 fastboot
 img2simg
 simg2img

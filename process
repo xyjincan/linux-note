@@ -22,3 +22,30 @@ sudo netstat -tlvp
 
 
 systemctl list-unit-files
+
+
+systemctl --all|grep gdm
+# systemctl stop gdm.service来关掉X Server
+
+
+
+
+### 暂停进程 Ctrl+Z
+
+	查看、恢复: jobs -l  & fg %1
+		
+		fg将后台中的命令调至前台继续运行
+		bg将一个在后台暂停的命令，变成继续执行
+	
+	or
+	暂停### kill -s SIGSTOP 9992
+	恢复### kill -s SIGCONT 9992
+		
+		SIGTSTP与SIGSTOP都是使进程暂停（都使用SIGCONT让进程重新激活）。
+		唯一的区别是SIGSTOP不可以捕获。
+
+
+	
+	
+	
+	

@@ -1,8 +1,62 @@
 #/etc/profile
 
+
+
+
+# set all my env path
+
+# base
+export APPBASE_PATH=/home/base
+
+# java
+PATH=PATH:$APPBASE_PATH/jdk
+export JAVA_HOME=$APPBASE_PATH/jdk
+export PATH=$JAVA_HOME/bin:$PATH
+
+# mvn
+export PATH=$APPBASE_PATH/apache-maven/bin:$PATH
+
+# gradle
+export PATH=$APPBASE_PATH/gradle/bin:$PATH
+
+# node
+export PATH=$APPBASE_PATH/node/bin:$PATH
+# go
+export PATH=$APPBASE_PATH/go/bin:$PATH
+# tomcat...
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 
+
 #set java environment
 
-export JAVA_HOME=/opt/java/java-8-sun
+export JAVA_HOME=/home/base/jdk1.8.0_171
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+export PATH=/home/base/apache-maven-3.5.4/bin:$PATH
+
+
+
+#set java environment
+
+export JAVA_HOME=/home/data/base/jdk8
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+export PATH=/home/data/base/apache-maven/bin:$PATH
+
+
+
+
+
 export JRE_HOME=/opt/java/java-8-sun/jre
 #export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
 export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
@@ -12,3 +66,7 @@ export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 export CATALINA=/home/xw/fedora/myapp/apache-tomcat-8.0.26
 export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CATALINA/lib
  
+
+export JAVA_HOME=/usr/share/jdk1.6.0_14 
+export PATH=$JAVA_HOME/bin:$PATH 
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar 

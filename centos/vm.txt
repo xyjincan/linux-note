@@ -1,0 +1,7 @@
+
+vmware 高版本
+	open-vm-tools
+
+
+vmware 低版本
+	挂载iso安装vmware-tools

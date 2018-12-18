@@ -1,0 +1,4 @@
+# 多个虚拟网卡 多个IP 移除添加
+
+Oct 26 15:57:09 view kernel: DMAR: DRHD: handling fault status reg 3
+Oct 26 15:57:09 view kernel: DMAR: [DMA Write] Request device [00:11.0] fault addr ffe0b000 [fault reason 02] Present bit in context entry is clear

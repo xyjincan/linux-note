@@ -1,4 +1,122 @@
 
+yum install --downloadonly --downloaddir=/home/data postgresql10-contrib postgresql10-server libxslt
+yum install postgresql10-contrib postgresql10-server libxslt
+
+# 自定义postgresql 存储位置
+vi /usr/lib/systemd/system/postgresql-10.service
+    # Location of database directory
+    Environment=PGDATA=/var/lib/pgsql/10/data/
+
+/usr/pgsql-10/bin/postgresql-10-setup initdb
+
+systemctl restart postgresql-10
+sudo -u postgres psql
+ALTER USER postgres WITH PASSWORD 'YOUR_PASSWD';
+
+
+
+
+vi 10\data\pg_hba.conf
+    最后添加一行 如果对具体网段有要求，自行修改
+    host    all   all      0.0.0.0/0       md5
+
+
+vi  10\data\postgresql.conf
+listen_addresses = '0.0.0.0'
+
+sudo firewall-cmd --permanent --add-port=5432/tcp
+sudo firewall-cmd --reload
+
+
+
+sudo systemctl daemon-reload
+
+Postgresql安装目录是/usr/pgsql-10,而Postgresql的数据目录是/var/lib/pgsql/版本号/data目录
+
+
+
+
+
+
+
+
+
+/usr/pgsql-10/bin/postgresql-10-setup initdb
+initdb -D /home/data/pgsql/10/data
+
+/usr/pgsql-10/bin/postgresql-10-setup initdb
+
+
+[root@cv 10]# systemctl enable postgresql-10
+Created symlink from /etc/systemd/system/multi-user.target.wants/postgresql-10.service to /usr/lib/systemd/system/postgresql-10.service.
+
+systemctl start postgresql-10
+
+su postgres
+export PGDATA=/home/data/pgsql/10/data
+/usr/pgsql-10/bin/postgresql-10-setup initdb
+pg_ctl start -D $PGDATA
+ps -ef | grep postgre
+
+
+/usr/pgsql-10/bin/pg_ctl -D /home/data/pgsql/10/data/ -l logfile start
+
+
+
+
+因为使用 systemctl start postgresql-9.5 将不会成功的，为啥呢？请打开 
+sudo vi /usr/lib/systemd/system/postgresql-9.5.service ，
+因为在#Location of database direcotry配置节里面没有指定正确的PGDATA。
+所以我们需要将下面的PGDATA设置成正确值
+#Location of database directory
+Environment=PGDATA=/home/postgresql_data
+
+
+
+sudo firewall-cmd --zone=public --add-port=5432/tcp --permanent
+sudo firewall-cmd --reload
+
+firewall-cmd –add-service=postgresql –permanent
+firewall-cmd –reload
+
+systemctl restart postgresql-10.service
+
+
+
+10\data\pg_hba.conf
+
+最后添加一行 如果对具体网段有要求，自行修改
+host    all   all      0.0.0.0/0       md5
+
+
+vim postgresql.conf
+listen_addresses = '0.0.0.0'
+
+
+
+(1) su - postgres 
+(2)psql 
+(3)show data_directory;
+
+修改service文件
+找到/usr/lib/systemd/system/postgresql*.service
+修改这个文件中的
+Environment=PGDATA=/var/lib/pgsql/9.4/data/
+将其修改为自己的新的数据路径：
+Environment=PGDATA=/home/data/
+
+
+/usr/pgsql-10/bin/pg_ctl -D /var/lib/pgsql/10/data/ -l logfile start
+
+
+
+
+
+
+
+
+
+
  pgdg-centos10  
  
  yum install https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
@@ -24,7 +142,7 @@ firewall-cmd --reload
 
     su - postgres  切换用户，执行后提示符会变为 '-bash-4.2$'
     psql -U postgres 登录数据库，执行后提示符变为 'postgres=#'
-    ALTER USER postgres WITH PASSWORD 'Jincan@123'  设置postgres用户密码为
+    ALTER USER postgres WITH PASSWORD 'Mysql@123'  设置postgres用户密码为
     \q  退出数据库
 8.开启远程访问
 

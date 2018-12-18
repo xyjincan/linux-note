@@ -7,6 +7,13 @@ sudo dnf install kernel-$(uname -r) kernel-core-$(uname -r) kernel-modules-$(una
 
 
 
+ kernel
+ kernel-core
+ kernel-devel
+ kernel-modules
+ kernel-modules-extra
+
+
 vmware
 
 kde wps

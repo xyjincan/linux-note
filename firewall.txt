@@ -12,10 +12,21 @@ firewall-cmd --reload
 firewall-cmd --permanent --add-port=3306/tcp
 
 firewall-cmd --permanent --add-port=80/tcp
-firewall-cmd --permanent --add-port=8080/tcp
+firewall-cmd --permanent --add-port=80/tcp
+
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd --permanent --add-port=443/tcp
+
+
+firewall-cmd --permanent --add-port=8443/tcp
 
 firewall-cmd --permanent  --remove-port=8080/tcp
 firewall-cmd --reload
+
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd --permanent --add-port=443/tcp
+firewall-cmd --permanent --add-forward-port=port=80:proto=tcp:toport=8080
+firewall-cmd --permanent --add-forward-port=port=443:proto=tcp:toport=8443
 
 
 重新加载
@@ -26,6 +37,7 @@ firewall-cmd --list-all
 ## 将80端口的流量转发至8080
 
 firewall-cmd --permanent --add-forward-port=port=80:proto=tcp:toport=8080
+firewall-cmd --permanent --add-forward-port=port=443:proto=tcp:toport=8443
 firewall-cmd --remove-forward-port=port=80:proto=tcp:toport=8080:toaddr=     
 
 对比
@@ -34,6 +46,8 @@ iptables -t nat -A PREROUTING -p tcp -i eno16777736 -d 192.168.91.129 --dport 10
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 sudo systemctl enable firewalld
+
+sudo systemctl status firewalld
 
 
 被默认的防火墙拦截:telnet: connect to address xx: No route to host and mysql 连不上，navicat报错

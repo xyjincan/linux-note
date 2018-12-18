@@ -1,3 +1,7 @@
+
+不同环境下eclipse使用不同的工作空间！
+
+
 Java JRE推荐配置：(不同电脑互相拷贝时可以直接运行)
     System library：
         Execution environment：JavaSE-1.x

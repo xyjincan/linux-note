@@ -1,5 +1,0 @@
-#!/bin/bash
-
-nohup xx-net > /dev/null  &
-
-

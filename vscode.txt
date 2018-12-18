@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Default Light+",
+    "extensions.ignoreRecommendations": true,
+    "explorer.confirmDelete": false,
+    "window.zoomLevel": 3,
+    "explorer.confirmDragAndDrop": false,
+    "editor.fontSize":13,
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+} 

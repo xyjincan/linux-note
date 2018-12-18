@@ -8,3 +8,10 @@ virt 是虚拟内存
 res是常驻内存
 shr是共享内存
 
+
+
+lsof -p 22 
+
+
+ulimit -a
+

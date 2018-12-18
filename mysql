@@ -1,3 +1,16 @@
+du -h --max-depth=1 /var/lib/mysql
+
+mysql 数据日志文件夹 var/lib/mysql
+Linux C7 3.10.0-693.11.6.el7.x86_64 #1 SMP Thu Jan 4 01:06:37 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mysqladmin variables -pMysql@123 -uroot | grep .log
+mysqladmin flush-logs -pMysql@123 -uroot
+mysql>SET GLOBAL general_log = 'ON';
+mysql>SET GLOBAL slow_query_log = 'ON';
+
+
+
+
+
 depend: mecab  mecab-ipadic
 
 remove mariadb-libs postfix
@@ -14,14 +27,14 @@ shell> mysql -uroot -p
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'Mysql@123';
 
-mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Fedora@123';
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Mysql@123';
 
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'Jincan@123';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Mysql@123';
  FLUSH PRIVILEGES; 
 sudo systemctl enable mysqld
 
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'OpenStack-123';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'OpenStack-123' WITH GRANT OPTION;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Mysql-123';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'Mysql-123' WITH GRANT OPTION;
 flush privileges;
 firewall-cmd --permanent --add-port=3306/tcp
 firewall-cmd --reload
@@ -67,6 +80,7 @@ innodb_file_per_table = on
 max_connections = 4096
 collation-server = utf8_general_ci
 character-set-server = utf8
+
 
 
 
@@ -215,4 +229,14 @@ default-character-set=utf8
 [mysqld_safe]
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
+
+
+
+
+
+
+utf8mb4_general_cs 大小写敏感
+utf8mb4_bin 大小写敏感
+
+
 

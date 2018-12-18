@@ -1,0 +1,24 @@
+
+## 网络配置 模板文件
+
+/etc/sysconfig/network-scripts
+
+# 阿里云
+
+[xxx]$ cat ifcfg-eth0 
+DEVICE=eth0
+ONBOOT=yes
+BOOTPROTO=static
+IPADDR=172.17.170.79
+NETMASK=255.255.240.0
+
+[xxx]$ cat route-eth0 
+0.0.0.0/0 via 172.17.175.253 dev eth0
+
+IPADDR=172.17.170.79
+NETMASK=255.255.240.0
+IPADDR2=172.17.170.79
+NETMASK2=255.255.240.0
+
+
+## ifconfig eth0 192.168.5.40 netmask 255.255.255.0

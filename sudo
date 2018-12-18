@@ -6,3 +6,6 @@ usermod -a -G wheel jc
 
 #centos
 sudo vim /etc/sudoers
+
+
+groups jc

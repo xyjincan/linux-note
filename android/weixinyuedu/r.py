@@ -4,14 +4,20 @@
 import subprocess
 import time
 import random
+import os
 
-abdpath="/bin/adb";# adb所在路径
+# for python3
+abdpath="/bin/adb";
+if os.name == 'nt':
+	abdpath="C:/myapp/adb/adb.exe";# adb所在路径
+#
+
 readTime = 8*60*60;
 startTime = int(time.time());
 endTime = startTime+readTime;
 nowTime = int(time.time());
 
-print("开始阅读:"+str(readTime)+"秒") 
+print("开始阅读:"+str(readTime/60/60)+"小时") 
 
 class ReadWeiXin(object):
     
@@ -70,6 +76,32 @@ if __name__ == "__main__":
         wxyd.read();#等待一会
         nowTime = int(time.time());#获取当前时间
 
+'''
+
+[jc@e4 ~]$ adb devices
+List of devices attached
+* daemon not running. starting it now at tcp:5037 *
+* daemon started successfully *
+^C
+[jc@e4 ~]$ adb devices
+List of devices attached
+9db3ce08        device
+
+[jc@e4 ~]$ adb  tcpip 5555
+restarting in TCP mode port: 5555
+
+[jc@e4 ~]$ adb connect 10.42.0.26
+connected to 10.42.0.26:5555
+
+[jc@e4 ~]$ adb devices
+List of devices attached
+10.42.0.26:5555 device
+9db3ce08        device
+
+[jc@e4 ~]$ 
+
+
+'''
 
 #屏幕： 1920 1080
 #屏幕： 宽1050 高1900

@@ -1,0 +1,17 @@
+http://tieba.baidu.com/p/4222295579 
+
+项目主页：http://copr.fedoraproject.org/coprs/
+Fedora-copr：（读作 /kä'pər/，意为 Cool Other Package Repositories ）新版上线，为 Fedora/EPEL/CentOS 社区带来了类似 PPA 的体验。（PPA可以说作为Ubuntu的一大特点，便于快速添加软件源。）
+Copr 后端使用 Fedora Koji 构建系统，它不仅希望能简化第三方 RPM 仓库的创建，还希望能成为一个轻量级、易于维护且具备插件支持的构建环境。
+使用 Copr 构建的软件包依然需要遵循 Fedora 允许的分发类型，依然不可以构建严禁项目。Copr 还提供了 json 风格 API 及命令行客户端，可以方便的供开发者使用。
+(来自于: http://www.linuxidc.com/Linux/2014-01/95233.htm)
+文档：https://fedorahosted.org/copr/wiki/UserDocs#FAQ
+https://fedorahosted.org/copr/
+用法：dnf启用源：sudo dnf copr enable user/project
+安装：sudo dnf install project
+禁用：sudo dnf copr disable user/project
+Yum启用源：sudo yum copr enable user/project
+安装：sudo yum install project
+禁用：sudo yum coprdisable user/project
+你可以到：/etc/yum.repos.d/查看你的源，里面会增加对应的repo源。
+（来自于：https://fedorahosted.org/copr/wiki/HowToEnableRepo）

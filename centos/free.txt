@@ -1,0 +1,54 @@
+CentOS 7
+
+
+
+[a@napp ~]$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:           1.8G        265M        887M        480K        685M        1.4G
+Swap:            0B          0B          0B
+[a@napp ~]$ free -k
+              total        used        free      shared  buff/cache   available
+Mem:        1882740      272088      908908         480      701744     1449840
+Swap:             0           0           0
+[a@napp ~]$ free -b
+              total        used        free      shared  buff/cache   available
+Mem:     1927925760   278618112   930721792      491520   718585856  1484636160
+Swap:             0           0           0
+
+
+
+
+首先，C (Buffers) 和D (Cached)被和到一起，即buff/cache;
+
+其次，used就是指A (程序使用的)；free就是指B (未被分配的)；
+
+另外，CentOS 7中加入了一个available，它是什么呢？手册上是这么说的：
+
+
+MemAvailable: An estimate of how much memory is available for starting new applications, without swapping.前面说过，当程序需要时，可以回收C
+ (Buffers)和D (Cached)，那么MemAvailabe不就是B+C+D吗？当程序需要时可以回收C和D，这句话以前是正确，但是现在就不精确了：因为， 现在，C和D中不是所有的内存都可以被回收。所以，大致可以这么理解，MemAvailable ＝ B (未被分配的)
+ + C (Buffers) ＋ D (Cached) - 不可回收的部分。哪些不可回收呢？共享内存段，tmpfs，ramfs等。详细的介绍如下：
+
+/proc/meminfo:
+ provide estimated available memory
+Many load balancing and workload placing programs check /proc/meminfo to estimate how much free memory
+is available. They generally do this by adding up "free" and "cached", which was fine ten years
+ ago, 
+but is pretty much guaranteed to be wrong today.
+It is wrong because Cached includes memory that is not freeable as page cache, for example shared
+ memory 
+segments, tmpfs, and ramfs, and it do esnot include reclaimable slab memory, which can take up
+ a large 
+fraction of system memory on mostly idle systems with lots of files.
+Currently, the amount of memory that is available for a new workload,without pushing the system
+ into swap,
+can be estimated from MemFree, Active(file), Inactive(file), and SReclaimable, as well as the
+ "low"watermarks 
+from /proc/zoneinfo.
+However, this may change in the future, and user space really should not be expected to know kernel
+ internals 
+to come up with an estimate for the amount of free memory.
+It is more convenient to provide such an estimate in /proc/meminfo. If things change in the future,
+ we only 
+have to change it in one place.
+

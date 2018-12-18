@@ -1,0 +1,35 @@
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd --reload
+firewall-cmd --list-all
+
+sudo systemctl restart httpd
+[jc@C7 ~]$ sudo systemctl enable httpd
+    Created symlink 
+        from /etc/systemd/system/multi-user.target.wants/httpd.service 
+        to /usr/lib/systemd/system/httpd.service.
+
+[jc@C7 php]$ sudo systemctl disable gitlab-runsvdir
+    Removed symlink 
+        /etc/systemd/system/basic.target.wants/gitlab-runsvdir.service.
+
+<VirtualHost *:80>
+    ServerName p.uuis.cc
+    ServerAlias p.uuis.cc
+    DocumentRoot /home/jc/work/php
+</VirtualHost>
+
+
+# sudo systemctl stop firewalld
+
+sudo systemctl status network
+
+
+# tree /etc/systemd/system
+
+
+# sudo setenforce 0
+# sudo systemctl stop firewalld
+
+
+# sudo setenforce 1
+# sudo systemctl start firewalld

@@ -6,3 +6,4 @@ yum -y install centos-release-xen
 
 yum clean all && yum makecache
 
+yum provides ifconfig 

@@ -1,3 +1,9 @@
+
+
+
+
+
+
 git init
 git remote add origin https://github.com/xyjincan/fail_clone.git
 echo "# fail_clone" >> README.md
@@ -59,6 +65,8 @@ M	gitused
 [jc@y4 gittest]$ 
 
 
+git init --bare xxx.git
+
 
 
 
@@ -87,3 +95,12 @@ git fetch下载远程最新的， 然后，git reset master分支重置
 第二种方法
 git reset --hard HEAD
 git pull
+
+
+
+
+
+
+
+
+git config --list 

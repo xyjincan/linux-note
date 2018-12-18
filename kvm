@@ -1,0 +1,43 @@
+
+
+sudo qemu-img create -f qcow2 /home/jc/sdata.qcow2 6G
+
+
+ 
+qemu-img info sdata.qcow2
+
+
+
+mount挂载qcow2镜像文件
+
+# ls /dev/n*
+sudo modprobe nbd max_part=8
+
+sudo  qemu-nbd -c /dev/nbd1 /home/jc/sdata.qcow2
+
+sudo  qemu-nbd --connect=/dev/nbd0 /home/jc/sdata.qcow2
+
+# 先格式化
+mount /dev/nbd0p1 /mnt/sd/
+
+
+
+ls /mnt/img
+
+
+
+umount /mnt/img
+
+sudo qemu-nbd -d /dev/nbd0
+
+
+fdisk -l
+
+
+
+
+
+Disk /dev/nbd0：6 GiB，6442450944 字节，12582912 个扇区
+/dev/nbd0p1  2048 12580863 12578816   6G Linux 文件系统
+Disk /dev/mapper/luks-9d71a5a7-9605-4c1c-aaef-e1602a2c9abd：6 GiB，6438256640 字节，12574720 个扇区
+

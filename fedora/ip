@@ -1,0 +1,59 @@
+2: enp0s31f6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 50:7b:9d:8d:07:88 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.33.31/24 brd 172.16.33.255 scope global noprefixroute enp0s31f6
+       valid_lft forever preferred_lft forever
+    inet 10.10.1.31/24 brd 10.10.1.255 scope global noprefixroute enp0s31f6
+       valid_lft forever preferred_lft forever
+    inet 10.66.10.31/24 brd 10.66.10.255 scope global noprefixroute enp0s31f6
+       valid_lft forever preferred_lft forever
+    inet6 fc00::cc10/8 scope global noprefixroute 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ea92:302c:18d6:2cbd/64 scope link 
+       valid_lft forever preferred_lft forever
+ 
+
+[xx@xxx network-scripts]$ cat ifcfg-ex 
+HWADDR=50:7B:9D:xx:xx:xx
+ETHTOOL_OPTS="autoneg on"
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=none
+IPADDR=172.16.xx.xx
+PREFIX=24
+GATEWAY=172.16.xx.1
+DNS1=119.29.29.29
+DNS2=114.114.114.114
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=yes
+NAME=ex
+UUID=a7c2d34a-f12d-3751-b551-1bb9ac9exxxx
+ONBOOT=yes
+AUTOCONNECT_PRIORITY=-100
+IPADDR1=10.10.1.31
+PREFIX1=24
+IPADDR2=10.66.10.31
+PREFIX2=24
+
+
+IPV6INIT=yes
+IPV6_AUTOCONF=no
+IPV6_DEFROUTE=no
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+IPV6ADDR=fc00::cc10/8
+
+# sudo systemctl restart network
+
+
+
+
+
+
+# 
+
+Link scope, fe80::/10 (it's practically implemented as a /64, but the whole /10 is reserved), is isolated to devices on a layer 2 segment. You can use a device's fe80 address to communicate within the segment, but you'll need an address with a different scope to do any communication that requires routing outside of the segment.
+
+Regarding your edit: While the idea of a private addressing is certainly in place in IPv4 (169.254/16 and the RFC 1918 ranges), the implementation of those is somewhat different due to the prevalence of NAT. In contrast, link-scope addresses and the fc00::/7 range (which is roughly equivalent to the RFC1918 ranges of IPv4) exist and are used alongside the global address of each device.
+
+Special handling is in place in many implementations to account for an address' scope that wasn't needed in IPv4 implementations.
